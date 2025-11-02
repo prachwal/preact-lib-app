@@ -90,7 +90,7 @@ The application is automatically deployed to GitHub Pages when pushing to the `m
 
 ## Modern CSS System
 
-This project uses a modern, scalable CSS architecture. See [CSS_SYSTEM.md](docs/CSS_SYSTEM.md) for complete documentation.
+This project uses a modern, scalable CSS architecture. See [CSS_SYSTEM.md](CSS_SYSTEM.md) for complete documentation.
 
 ### Key Features
 
@@ -148,8 +148,7 @@ npm run build-css
 
 ```text
 .
-├── docs/
-│   └── CSS_SYSTEM.md       # Modern CSS system documentation
+├── CSS_SYSTEM.md            # Modern CSS system documentation
 ├── public/
 │   └── vite.svg
 ├── src/
@@ -190,7 +189,7 @@ npm run build-css
 - `src/styles/`: Modern CSS architecture (tokens, mixins, utilities, animations)
 - `src/application/`: Feature-based components (header, footer, main)
 - `src/__tests__/`: Test files (e.g., `App.test.tsx`)
-- `docs/CSS_SYSTEM.md`: Complete CSS system documentation
+- `CSS_SYSTEM.md`: Complete CSS system documentation
 - `vite.config.ts`: Vite configuration with dynamic base for Pages
 - `vitest.config.ts`: Vitest configuration for testing
 - `.github/workflows/build.yml`: GitHub Actions pipeline
