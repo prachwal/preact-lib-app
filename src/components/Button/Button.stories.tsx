@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/preact';
-import Button, { type ButtonProps } from './Button';
+import { Button, type ButtonProps } from '.';
 
 const meta: Meta<ButtonProps> = {
   title: 'Components/Button',
