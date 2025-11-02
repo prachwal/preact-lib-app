@@ -58,6 +58,8 @@ jobs:
       run: npm run build
     - name: Generate docs
       run: npm run docs
+    - name: Build Storybook
+      run: npm run build-storybook
     - name: Copy docs to dist
       run: cp -r docs dist/docs
     - name: Download coverage
@@ -67,6 +69,8 @@ jobs:
         path: coverage
     - name: Copy coverage to dist
       run: cp -r coverage dist/coverage
+    - name: Copy storybook to dist
+      run: cp -r storybook-static dist/storybook
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
