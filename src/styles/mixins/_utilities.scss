@@ -1,0 +1,102 @@
+// Mixins: Utilities
+// General utility mixins
+
+// Reset list styles
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Reset button styles
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Scrollbar styling
+@mixin scrollbar($width: 8px, $track-color: transparent, $thumb-color: var(--color-gray-600)) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: 999px;
+    
+    &:hover {
+      background: var(--color-gray-500);
+    }
+  }
+  
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: $thumb-color $track-color;
+}
+
+// Hide scrollbar
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Selection color
+@mixin selection($bg: var(--color-primary), $color: var(--color-white)) {
+  &::selection {
+    background-color: $bg;
+    color: $color;
+  }
+}
+
+// Placeholder styling
+@mixin placeholder($color: var(--color-text-tertiary)) {
+  &::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+}
+
+// Box shadow with custom properties
+@mixin shadow($size: 'md') {
+  @if $size == 'sm' {
+    box-shadow: var(--shadow-sm);
+  } @else if $size == 'md' {
+    box-shadow: var(--shadow-md);
+  } @else if $size == 'lg' {
+    box-shadow: var(--shadow-lg);
+  } @else if $size == 'xl' {
+    box-shadow: var(--shadow-xl);
+  } @else {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+// Reset appearance
+@mixin reset-appearance {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

@@ -1,4 +1,7 @@
-/* Buttons */
+// Component: Buttons
+// Modern button styles using design system
+@use '../base/mixins' as *;
+
 button {
   @include button-base;
   @include hover-effect;

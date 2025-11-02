@@ -1,0 +1,24 @@
+// Design Tokens: Transitions
+// Animation timing and easing functions
+
+:root {
+  // Duration
+  --transition-duration-fast: 150ms;
+  --transition-duration-base: 250ms;
+  --transition-duration-slow: 350ms;
+  --transition-duration-slower: 500ms;
+  
+  // Easing functions
+  --transition-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --transition-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --transition-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-ease-linear: linear;
+  
+  // Common transitions
+  --transition-all: all var(--transition-duration-base) var(--transition-ease-in-out);
+  --transition-colors: color var(--transition-duration-base) var(--transition-ease-in-out),
+                       background-color var(--transition-duration-base) var(--transition-ease-in-out),
+                       border-color var(--transition-duration-base) var(--transition-ease-in-out);
+  --transition-transform: transform var(--transition-duration-base) var(--transition-ease-in-out);
+  --transition-opacity: opacity var(--transition-duration-base) var(--transition-ease-in-out);
+}

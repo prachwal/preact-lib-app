@@ -1,0 +1,80 @@
+// Mixins: Responsive
+// Media query mixins for responsive design
+@use '../tokens/breakpoints' as *;
+
+// Mobile-first responsive mixins
+@mixin respond-above($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @media (max-width: $breakpoint - 1px) {
+    @content;
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max - 1px) {
+    @content;
+  }
+}
+
+// Breakpoint-specific mixins
+@mixin xs {
+  @include respond-above($breakpoint-xs) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @include respond-above($breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @include respond-above($breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include respond-above($breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @include respond-above($breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @include respond-above($breakpoint-2xl) {
+    @content;
+  }
+}
+
+// Print styles
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+// Reduced motion preference
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// High contrast mode
+@mixin high-contrast {
+  @media (prefers-contrast: high) {
+    @content;
+  }
+}
