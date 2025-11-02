@@ -39,7 +39,7 @@ Run tests once (non-watch mode):
 npm test
 ```
 
-Tests use Vitest with jsdom environment and generate JUnit XML report in `junit.xml`.
+Tests use Vitest with jsdom environment and generate JUnit XML report in `junit.xml`. Code coverage is collected and reports are generated in `coverage/` directory (HTML, JSON, text formats).
 
 ## Build
 
@@ -56,12 +56,14 @@ dist/
 ├── assets
 │   ├── index-[hash].js
 │   └── index-[hash].css
+├── coverage
+│   └── (coverage report files)
 ├── docs
 │   └── (TypeDoc generated files)
 ├── index.html
 └── vite.svg
 
-2 directories, 5+ files
+3 directories, 6+ files
 ```
 
 ## Preview

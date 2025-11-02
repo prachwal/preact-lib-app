@@ -29,6 +29,11 @@ jobs:
       run: npm ci
     - name: Run tests
       run: npm test
+    - name: Upload coverage
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage
+        path: coverage/
     - name: Upload test results
       uses: actions/upload-artifact@v4
       if: always()
@@ -55,6 +60,13 @@ jobs:
       run: npm run docs
     - name: Copy docs to dist
       run: cp -r docs dist/docs
+    - name: Download coverage
+      uses: actions/download-artifact@v4
+      with:
+        name: coverage
+        path: coverage
+    - name: Copy coverage to dist
+      run: cp -r coverage dist/coverage
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
