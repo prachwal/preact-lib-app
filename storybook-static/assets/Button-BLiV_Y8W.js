@@ -1,0 +1,1 @@
+import{u as c}from"./iframe-Cmw7-rNe.js";const u=({variant:s="ghost",size:t="md",className:o="",children:n,...a})=>{const e=s!=="ghost"?`btn-${s}`:"btn",l=t!=="md"?`btn-${t}`:"",b=["btn",e,l,o].filter(Boolean).join(" ");return c("button",{className:b,...a,children:n})};export{u as B};
