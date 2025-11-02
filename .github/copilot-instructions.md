@@ -31,3 +31,49 @@ This is a Preact application built with Vite, using TypeScript. It features a si
 - **Vite**: Handles bundling, dev server, and build; configured with Preact preset.
 - **Vitest**: Integrated testing with JUnit output for CI reporting.
 - **GitHub Pages**: Deployment target; workflow uses actions for Pages setup and upload.
+
+## Modern Folder Structure Proposal
+
+To improve scalability, maintainability, and developer experience, we propose the following modern folder structure for the `src/` directory. This structure follows feature-based organization, separates concerns, and aligns with TypeScript and Preact best practices.
+
+```
+src/
+├── components/           # Reusable UI components
+│   ├── common/          # Generic components (buttons, inputs, etc.)
+│   ├── layout/          # Layout-specific components (header, footer, sidebar)
+│   └── ui/              # UI-specific components (cards, modals, etc.)
+├── pages/               # Page-level components (route-based views)
+├── hooks/               # Custom React hooks
+├── utils/               # Utility functions and helpers
+├── types/               # TypeScript type definitions and interfaces
+├── styles/              # Global styles, themes, and CSS variables
+│   ├── base/            # Base styles (reset, typography, colors)
+│   ├── components/      # Component-specific styles
+│   └── themes/          # Theme configurations
+├── assets/              # Static assets (images, icons, fonts)
+├── lib/                 # External library configurations and wrappers
+├── __tests__/           # Test files (mirroring src structure)
+├── App.tsx              # Main application component
+├── main.tsx             # Application entry point
+└── index.ts             # Barrel exports for clean imports
+```
+
+### Structure Guidelines
+
+- **Feature-based organization**: Group related files by feature rather than type (e.g., `components/auth/` instead of `components/LoginButton.tsx` scattered across types).
+- **Barrel exports**: Use `index.ts` files in each directory for clean imports (e.g., `import { Button } from '@/components/common'`).
+- **Separation of concerns**: Keep business logic in hooks/utils, UI in components, types in types/, styles in styles/.
+- **Scalability**: As the app grows, create subdirectories within each main folder (e.g., `components/dashboard/widgets/`).
+- **Testing**: Mirror the src structure in `__tests__/`, placing tests next to their corresponding files.
+- **Assets**: Organize assets by type (images/, icons/) and use consistent naming conventions.
+- **Types**: Centralize all TypeScript definitions in `types/` for better type management and reuse.
+
+### Migration Path
+
+Current structure can be gradually migrated:
+1. Move existing components to appropriate subdirectories
+2. Create barrel exports for existing modules
+3. Update import paths to use the new structure
+4. Add new features following the proposed structure
+
+This structure supports better code organization, easier testing, improved developer experience, and long-term maintainability.
