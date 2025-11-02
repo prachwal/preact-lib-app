@@ -6,3 +6,8 @@ export * from './Radio';
 export * from './Select';
 export * from './Switch';
 export * from './FormGroup';
+export * from './Breadcrumbs';
+export * from './Pagination';
+export * from './Tabs';
+export * from './Menu';
+export * from './Stepper';
