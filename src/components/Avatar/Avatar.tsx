@@ -36,15 +36,15 @@ export const Avatar = ({
 
   const renderContent = () => {
     if (src) {
-      return <img src={src} alt={alt} class="avatar-image" />;
+      return <img src={src} alt={alt} className="avatar-image" />;
     }
     if (initials) {
-      return <span class="avatar-initials">{initials}</span>;
+      return <span className="avatar-initials">{initials}</span>;
     }
     if (children) {
       return children;
     }
-    return <span class="avatar-placeholder">?</span>;
+    return <span className="avatar-placeholder">?</span>;
   };
 
   return (

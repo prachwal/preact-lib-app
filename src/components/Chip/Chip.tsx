@@ -60,10 +60,10 @@ export const Chip = ({
       tabIndex={onClick && !disabled ? 0 : undefined}
       aria-disabled={disabled}
     >
-      <span class="chip-label">{children}</span>
+      <span className="chip-label">{children}</span>
       {onClose && (
         <button
-          class="chip-close"
+          className="chip-close"
           onClick={handleClose}
           aria-label="Remove"
           disabled={disabled}

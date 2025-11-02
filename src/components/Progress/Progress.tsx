@@ -45,11 +45,11 @@ export const Progress = ({
 
     return (
       <div className={classes} role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
-        <svg class="progress-svg" width="100" height="100" viewBox="0 0 100 100">
-          <circle class="progress-track" cx="50" cy="50" r={radius} />
+        <svg className="progress-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle className="progress-track" cx="50" cy="50" r={radius} />
           {!indeterminate && (
             <circle 
-              class="progress-fill" 
+              className="progress-fill" 
               cx="50" 
               cy="50" 
               r={radius}
@@ -61,7 +61,7 @@ export const Progress = ({
           )}
         </svg>
         {showLabel && !indeterminate && (
-          <span class="progress-label">{displayLabel}</span>
+          <span className="progress-label">{displayLabel}</span>
         )}
       </div>
     );
@@ -69,14 +69,14 @@ export const Progress = ({
 
   return (
     <div className={classes} role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
-      <div class="progress-track">
+      <div className="progress-track">
         <div 
-          class="progress-fill" 
+          className="progress-fill" 
           style={{ width: indeterminate ? undefined : `${percentage}%` }}
         />
       </div>
       {showLabel && !indeterminate && (
-        <span class="progress-label">{displayLabel}</span>
+        <span className="progress-label">{displayLabel}</span>
       )}
     </div>
   );

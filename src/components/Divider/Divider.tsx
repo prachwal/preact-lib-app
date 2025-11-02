@@ -28,7 +28,7 @@ export const Divider = ({
   if (children) {
     return (
       <div className={classes} role="separator">
-        <span class="divider-text">{children}</span>
+        <span className="divider-text">{children}</span>
       </div>
     );
   }

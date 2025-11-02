@@ -33,14 +33,14 @@ export const Alert = ({
 
   return (
     <div className={classes} role="alert">
-      <div class="alert-icon">{icons[variant]}</div>
-      <div class="alert-content">
-        {title && <div class="alert-title">{title}</div>}
-        <div class="alert-message">{children}</div>
+      <div className="alert-icon">{icons[variant]}</div>
+      <div className="alert-content">
+        {title && <div className="alert-title">{title}</div>}
+        <div className="alert-message">{children}</div>
       </div>
       {onClose && (
         <button 
-          class="alert-close" 
+          className="alert-close" 
           onClick={onClose}
           aria-label="Close alert"
         >

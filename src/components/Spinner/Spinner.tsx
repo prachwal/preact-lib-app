@@ -27,22 +27,22 @@ export const Spinner = ({
       case 'dots':
         return (
           <>
-            <span class="spinner-dot" />
-            <span class="spinner-dot" />
-            <span class="spinner-dot" />
+            <span className="spinner-dot" />
+            <span className="spinner-dot" />
+            <span className="spinner-dot" />
           </>
         );
       case 'pulse':
-        return <span class="spinner-pulse" />;
+        return <span className="spinner-pulse" />;
       default:
-        return <span class="spinner-circle" />;
+        return <span className="spinner-circle" />;
     }
   };
 
   return (
     <div className={classes} role="status" aria-label={label}>
       {renderSpinner()}
-      <span class="sr-only">{label}</span>
+      <span className="sr-only">{label}</span>
     </div>
   );
 };
