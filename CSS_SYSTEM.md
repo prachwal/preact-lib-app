@@ -8,7 +8,7 @@ This project implements a modern, scalable CSS architecture using SCSS with desi
 
 ### Directory Structure
 
-```
+```text
 src/styles/
 ├── tokens/           # Design tokens (CSS custom properties)
 │   ├── _colors.scss
@@ -168,6 +168,7 @@ Design tokens are defined as CSS custom properties and provide a single source o
 ```
 
 **Available breakpoints:**
+
 - `xs`: 480px
 - `sm`: 640px
 - `md`: 768px
@@ -265,7 +266,7 @@ Design tokens are defined as CSS custom properties and provide a single source o
 
 ## Utility Classes
 
-### Spacing
+### Spacing desc
 
 ```html
 <!-- Margin -->
@@ -309,7 +310,7 @@ Available sizes: `0, 1, 2, 3, 4, 6, 8, 12, 16`
 </div>
 ```
 
-### Typography
+### Typography desc
 
 ```html
 <h1 class="text-4xl font-bold">Large heading</h1>
@@ -345,6 +346,7 @@ Available sizes: `0, 1, 2, 3, 4, 6, 8, 12, 16`
 ```
 
 Available animations:
+
 - `fadeIn`, `fadeOut`
 - `slideInUp`, `slideInDown`, `slideInLeft`, `slideInRight`
 - `scaleIn`, `scaleOut`
@@ -407,6 +409,7 @@ The system supports both automatic (system preference) and manual theme switchin
 ### 1. Use Design Tokens
 
 ✅ **Good:**
+
 ```scss
 .button {
   padding: var(--space-4);
@@ -416,6 +419,7 @@ The system supports both automatic (system preference) and manual theme switchin
 ```
 
 ❌ **Avoid:**
+
 ```scss
 .button {
   padding: 16px;
@@ -427,6 +431,7 @@ The system supports both automatic (system preference) and manual theme switchin
 ### 2. Mobile-First Responsive
 
 ✅ **Good:**
+
 ```scss
 .component {
   width: 100%;
@@ -444,11 +449,13 @@ The system supports both automatic (system preference) and manual theme switchin
 ### 3. Use Utility Classes for Simple Styles
 
 ✅ **Good:**
+
 ```html
 <div class="flex items-center gap-4 p-6">
 ```
 
 ❌ **Avoid creating CSS for simple layouts:**
+
 ```html
 <div class="custom-flex-container">
 ```
@@ -456,6 +463,7 @@ The system supports both automatic (system preference) and manual theme switchin
 ### 4. Accessibility First
 
 Always include:
+
 - Focus states for interactive elements
 - Sufficient color contrast
 - Screen reader text where needed
@@ -485,12 +493,14 @@ Always include:
 ### From Old @import to New @use
 
 **Before:**
+
 ```scss
 @import "styles/themes/variables";
 @import "styles/base/mixins";
 ```
 
 **After:**
+
 ```scss
 @use 'styles/tokens' as *;
 @use 'styles/mixins' as *;
@@ -499,6 +509,7 @@ Always include:
 ### From Hardcoded Values to Tokens
 
 **Before:**
+
 ```scss
 .component {
   margin: 16px;
@@ -508,6 +519,7 @@ Always include:
 ```
 
 **After:**
+
 ```scss
 .component {
   margin: var(--space-4);

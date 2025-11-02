@@ -1,0 +1,10 @@
+// Storybook docs styling
+.docs-story {
+    background-color: var(--color-bg);
+}
+
+// Alternative selectors for Storybook docs
+.storybook-docs .docs-story,
+.sbdocs .docs-story {
+    background-color: var(--color-bg);
+}

@@ -18,8 +18,8 @@
     --color-text-tertiary: rgba(33, 53, 71, 0.5);
     
     // UI element colors
-    --color-button-bg: #f9f9f9;
-    --color-button-border: #646cff;
+    --color-button-bg: transparent;
+    --color-button-border: var(--color-border);
     --color-border: rgba(0, 0, 0, 0.1);
     --color-shadow: rgba(0, 0, 0, 0.1);
     
@@ -45,8 +45,8 @@
   --color-text-tertiary: rgba(33, 53, 71, 0.5);
   
   // UI element colors
-  --color-button-bg: #f9f9f9;
-  --color-button-border: #646cff;
+  --color-button-bg: transparent;
+  --color-button-border: var(--color-border);
   --color-border: rgba(0, 0, 0, 0.1);
   --color-shadow: rgba(0, 0, 0, 0.1);
   
@@ -71,8 +71,12 @@
   --color-text-tertiary: rgba(255, 255, 255, 0.38);
   
   // UI element colors
-  --color-button-bg: #1a1a1a;
-  --color-button-border: transparent;
+  --color-button-bg: transparent;
+  --color-button-border: var(--color-border);
   --color-border: rgba(255, 255, 255, 0.1);
   --color-shadow: rgba(0, 0, 0, 0.3);
+  
+  // Shadow adjustments for dark theme
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-color-dark: rgba(0, 0, 0, 0.5);
 }

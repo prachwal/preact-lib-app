@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.2",
+    "@storybook/addon-docs": "^10.0.2",
     "@storybook/preact-vite": "^10.0.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/preact": "^3.2.4",
