@@ -1,0 +1,10 @@
+// Mixins Index
+// Central export for all mixins using modern @forward
+
+@forward 'responsive';
+@forward 'accessibility';
+@forward 'layout';
+@forward 'typography';
+@forward 'buttons';
+@forward 'animations';
+@forward 'utilities';

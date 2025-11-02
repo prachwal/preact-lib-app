@@ -1,0 +1,55 @@
+// Design Tokens: Colors
+// Modern CSS custom properties for theme colors
+
+:root {
+  // Primary colors
+  --color-primary: #646cff;
+  --color-primary-hover: #535bf2;
+  --color-primary-light: #8087ff;
+  --color-primary-dark: #4148c7;
+  
+  // Secondary colors
+  --color-secondary: #673ab8;
+  --color-secondary-hover: #5527a0;
+  
+  // Neutral colors
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9f9f9;
+  --color-gray-100: #f3f3f3;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  
+  // Semantic colors
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  // Background colors (dark theme default)
+  --color-bg: #242424;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #2d2d2d;
+  
+  // Text colors
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-tertiary: rgba(255, 255, 255, 0.38);
+  
+  // UI element colors
+  --color-button-bg: #1a1a1a;
+  --color-button-border: transparent;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  
+  // Utility colors
+  --color-docs: #888;
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-hover);
+}

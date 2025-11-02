@@ -1,7 +1,9 @@
-/* App layout */
+// Component: App
+// Main application container styles
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--space-8);
   text-align: center;
 }

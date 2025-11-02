@@ -1,4 +1,7 @@
-/* WAŻNE: Zastosuj kolory do body i html */
+// Base Typography Styles
+// Global typography and layout styling using modern CSS
+
+/* Apply colors and layout to html and body */
 html,
 body {
   margin: 0;
@@ -15,18 +18,53 @@ body {
   min-height: 100vh;
 }
 
+/* Headings */
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: 2.4em;
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: 1.8em;
+  line-height: var(--line-height-snug);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* Links */
 a {
-  font-weight: 500;
-  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-link);
   text-decoration: none;
+  transition: var(--transition-colors);
+  
+  &:hover {
+    color: var(--color-link-hover);
+  }
+  
+  &:is(:focus, :focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
 }
 
-a:hover {
-  color: var(--color-primary-hover);
+/* Code */
+code {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+  background-color: var(--color-bg-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: var(--border-radius-base);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }

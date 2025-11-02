@@ -1,0 +1,62 @@
+// Mixins: Animations
+// Animation and transition utilities
+
+// Fade animations
+@mixin fade-in($duration: var(--transition-duration-base)) {
+  animation: fadeIn $duration var(--transition-ease-in-out);
+}
+
+@mixin fade-out($duration: var(--transition-duration-base)) {
+  animation: fadeOut $duration var(--transition-ease-in-out);
+}
+
+// Slide animations
+@mixin slide-in-up($duration: var(--transition-duration-base)) {
+  animation: slideInUp $duration var(--transition-ease-out);
+}
+
+@mixin slide-in-down($duration: var(--transition-duration-base)) {
+  animation: slideInDown $duration var(--transition-ease-out);
+}
+
+// Scale animations
+@mixin scale-in($duration: var(--transition-duration-base)) {
+  animation: scaleIn $duration var(--transition-ease-out);
+}
+
+// Spin animation
+@mixin spin($duration: 1s) {
+  animation: spin $duration linear infinite;
+}
+
+// Pulse animation
+@mixin pulse($duration: 2s) {
+  animation: pulse $duration var(--transition-ease-in-out) infinite;
+}
+
+// Bounce animation
+@mixin bounce($duration: 1s) {
+  animation: bounce $duration ease infinite;
+}
+
+// Transition helper
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: var(--transition-duration-base);
+  transition-timing-function: var(--transition-ease-in-out);
+}
+
+// Hardware acceleration
+@mixin hardware-accelerate {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+// Respect reduced motion preference
+@mixin respect-motion-preference {
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,6 +1,6 @@
 # Preact Lib App
 
-A simple Preact application built with Vite and TypeScript, featuring a counter component and configured for testing and deployment.
+A simple Preact application built with Vite and TypeScript, featuring a counter component and configured for testing and deployment. Includes a modern, scalable CSS architecture with design tokens, utility classes, and SCSS best practices.
 
 ## Features
 
@@ -9,6 +9,10 @@ A simple Preact application built with Vite and TypeScript, featuring a counter 
 - Testing with Vitest and JUnit reporting
 - CI/CD pipeline with GitHub Actions
 - Automatic deployment to GitHub Pages
+- **Modern CSS System** with design tokens, mixins, utilities, and animations
+- Responsive design with mobile-first approach
+- Dark/Light mode theming with system preference support
+- Accessibility-first components (WCAG compliant)
 
 ## Prerequisites
 
@@ -84,26 +88,92 @@ The application is automatically deployed to GitHub Pages when pushing to the `m
 
 **Live Demo**: [https://prachwal.github.io/preact-lib-app/](https://prachwal.github.io/preact-lib-app/)
 
+## Modern CSS System
+
+This project uses a modern, scalable CSS architecture. See [CSS_SYSTEM.md](CSS_SYSTEM.md) for complete documentation.
+
+### Key Features
+
+- **Design Tokens**: CSS custom properties for colors, spacing, typography, shadows, transitions
+- **Responsive Mixins**: Mobile-first breakpoint system (xs, sm, md, lg, xl, 2xl)
+- **Utility Classes**: Spacing, flexbox, grid, typography, display utilities
+- **Animations**: Keyframe animations with reduced motion support
+- **Theming**: Dark/Light mode with system preference detection
+- **Accessibility**: WCAG-compliant focus states, screen reader utilities
+- **Modern SCSS**: Uses `@use`/`@forward` instead of deprecated `@import`
+
+### Quick Examples
+
+```html
+<!-- Utility classes -->
+<div class="flex items-center justify-between p-6 gap-4">
+  <h1 class="text-3xl font-bold">Title</h1>
+  <button class="px-4 py-2">Action</button>
+</div>
+
+<!-- Grid layout -->
+<div class="grid grid-cols-3 gap-6">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+</div>
+```
+
+```scss
+// Using mixins and tokens
+@use 'styles/mixins' as *;
+
+.my-component {
+  padding: var(--space-6);
+  border-radius: var(--border-radius-lg);
+  transition: var(--transition-all);
+  
+  @include md {
+    padding: var(--space-8);
+  }
+  
+  @include focus-visible;
+}
+```
+
+### Build CSS
+
+Compile SCSS to CSS:
+
+```bash
+npm run build-css
+```
+
 ## Project Structure
 
 ```text
 .
-├── public
+├── CSS_SYSTEM.md            # Modern CSS system documentation
+├── public/
 │   └── vite.svg
-├── src
-│   ├── __tests__
+├── src/
+│   ├── __tests__/
 │   │   └── App.test.tsx
-│   ├── assets
+│   ├── application/         # Feature components
+│   │   ├── footer/
+│   │   ├── header/
+│   │   └── main/
+│   ├── assets/
 │   │   └── preact.svg
-│   ├── app.css
+│   ├── styles/              # Modern CSS architecture
+│   │   ├── animations/      # Keyframe animations
+│   │   ├── base/            # Base styles
+│   │   ├── components/      # Component styles
+│   │   ├── mixins/          # SCSS mixins
+│   │   ├── themes/          # Theme configuration
+│   │   ├── tokens/          # Design tokens
+│   │   └── utilities/       # Utility classes
 │   ├── app.tsx
-│   ├── index.css
-│   └── main.tsx
+│   ├── main.tsx
+│   └── index.scss           # CSS entry point
 ├── LICENSE
 ├── README.md
 ├── index.html
-├── junit.xml
-├── package-lock.json
 ├── package.json
 ├── tsconfig.app.json
 ├── tsconfig.json
@@ -111,13 +181,15 @@ The application is automatically deployed to GitHub Pages when pushing to the `m
 ├── typedoc.json
 ├── vite.config.ts
 └── vitest.config.ts
-
-4 directories, 19 files
 ```
 
 - `src/app.tsx`: Main App component with counter logic
 - `src/main.tsx`: Application entry point
+- `src/index.scss`: Main CSS entry point using modern `@use`/`@forward`
+- `src/styles/`: Modern CSS architecture (tokens, mixins, utilities, animations)
+- `src/application/`: Feature-based components (header, footer, main)
 - `src/__tests__/`: Test files (e.g., `App.test.tsx`)
+- `CSS_SYSTEM.md`: Complete CSS system documentation
 - `vite.config.ts`: Vite configuration with dynamic base for Pages
 - `vitest.config.ts`: Vitest configuration for testing
 - `.github/workflows/build.yml`: GitHub Actions pipeline

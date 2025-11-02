@@ -1,11 +1,26 @@
-@import "styles/themes/variables";
-@import "styles/themes/themes";
+// Modern CSS System - Main Entry Point
+// Using @use and @forward instead of deprecated @import
 
-@import "styles/base/mixins";
-@import "styles/base/typography";
+// 1. Design Tokens (CSS Custom Properties)
+@use 'styles/tokens' as *;
 
-@import "styles/components/buttons";
-@import "styles/components/app";
-@import "styles/components/logo";
-@import "styles/components/card";
-@import "styles/components/read-the-docs";
+// 2. Theme Configuration
+@use 'styles/themes/variables';
+@use 'styles/themes/themes';
+
+// 3. Base Styles
+@use 'styles/base/mixins';
+@use 'styles/base/typography';
+
+// 4. Animations
+@use 'styles/animations' as *;
+
+// 5. Components
+@use 'styles/components/buttons';
+@use 'styles/components/app';
+@use 'styles/components/logo';
+@use 'styles/components/card';
+@use 'styles/components/read-the-docs';
+
+// 6. Utilities (Optional - load last to ensure highest specificity)
+@use 'styles/utilities' as *;

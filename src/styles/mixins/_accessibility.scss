@@ -1,0 +1,64 @@
+// Mixins: Accessibility
+// Accessibility-focused mixins for better UX
+
+// Screen reader only content
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Remove sr-only
+@mixin not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+// Focus visible styles (modern approach)
+@mixin focus-visible {
+  &:is(:focus, :focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+// Enhanced focus ring
+@mixin focus-ring($color: var(--color-primary), $width: 3px) {
+  &:is(:focus, :focus-visible) {
+    outline: $width solid $color;
+    outline-offset: 2px;
+    box-shadow: var(--shadow-focus);
+  }
+}
+
+// Skip focus outline (use sparingly, ensure alternative)
+@mixin focus-none {
+  &:focus {
+    outline: none;
+  }
+}
+
+// High contrast mode adjustments
+@mixin forced-colors {
+  @media (forced-colors: active) {
+    @content;
+  }
+}
+
+// Ensure minimum touch target size (44x44px WCAG)
+@mixin touch-target($size: 44px) {
+  min-width: $size;
+  min-height: $size;
+}
