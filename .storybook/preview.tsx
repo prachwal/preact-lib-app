@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/preact-vite'
 import '../src/index.css';
+import type { JSX } from 'preact';
 
 const preview: Preview = {
   parameters: {
@@ -39,8 +40,8 @@ const preview: Preview = {
       } else {
         document.documentElement.setAttribute('data-theme', theme);
       }
-      
-      return <Story />;
+
+      return (<div id="app"><Story /></div>);
     },
   ],
 };

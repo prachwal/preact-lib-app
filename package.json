@@ -10,7 +10,8 @@
     "test": "vitest --run --coverage",
     "docs": "typedoc",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky"
   },
   "dependencies": {
     "preact": "^10.27.2"
@@ -22,6 +23,7 @@
     "@testing-library/preact": "^3.2.4",
     "@types/node": "^24.9.2",
     "@vitest/coverage-v8": "^4.0.6",
+    "husky": "^9.1.7",
     "jsdom": "^27.1.0",
     "storybook": "^10.0.2",
     "typedoc": "^0.28.14",

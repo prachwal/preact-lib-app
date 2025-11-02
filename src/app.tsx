@@ -1,4 +1,4 @@
-import { Footer, Header, Main } from "./application";
+import { Footer, Header, Main } from "@/application";
 
 export function App() {
   return (
