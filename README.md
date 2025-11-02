@@ -49,7 +49,20 @@ Build the application for production:
 npm run build
 ```
 
-Output is in the `dist/` directory.
+Output is in the `dist/` directory with the following structure:
+
+```text
+dist/
+├── assets
+│   ├── index-[hash].js
+│   └── index-[hash].css
+├── docs
+│   └── (TypeDoc generated files)
+├── index.html
+└── vite.svg
+
+2 directories, 5+ files
+```
 
 ## Preview
 
@@ -67,7 +80,38 @@ The application is automatically deployed to GitHub Pages when pushing to the `m
 - Build stage: Builds the app and uploads artifacts
 - Deploy stage: Publishes to GitHub Pages with dynamic base path
 
+**Live Demo**: [https://prachwal.github.io/preact-lib-app/](https://prachwal.github.io/preact-lib-app/)
+
 ## Project Structure
+
+```text
+.
+├── public
+│   └── vite.svg
+├── src
+│   ├── __tests__
+│   │   └── App.test.tsx
+│   ├── assets
+│   │   └── preact.svg
+│   ├── app.css
+│   ├── app.tsx
+│   ├── index.css
+│   └── main.tsx
+├── LICENSE
+├── README.md
+├── index.html
+├── junit.xml
+├── package-lock.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── typedoc.json
+├── vite.config.ts
+└── vitest.config.ts
+
+4 directories, 19 files
+```
 
 - `src/app.tsx`: Main App component with counter logic
 - `src/main.tsx`: Application entry point
@@ -76,15 +120,12 @@ The application is automatically deployed to GitHub Pages when pushing to the `m
 - `vitest.config.ts`: Vitest configuration for testing
 - `.github/workflows/build.yml`: GitHub Actions pipeline
 
-## Technologies
+## Documentation
 
-- **Preact**: Lightweight React alternative
-- **Vite**: Fast build tool and dev server
-- **TypeScript**: Type-safe JavaScript
-- **Vitest**: Testing framework
-- **GitHub Actions**: CI/CD and deployment
-- **GitHub Pages**: Hosting platform
+Generate TSDoc documentation using TypeDoc:
 
-## License
+```bash
+npm run docs
+```
 
-MIT
+Documentation is generated in the `docs/` directory and copied to `dist/docs/` for inclusion in build artifacts. Open `dist/docs/index.html` locally to view the API documentation.
