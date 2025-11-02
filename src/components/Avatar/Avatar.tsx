@@ -12,6 +12,7 @@ export interface AvatarProps {
   className?: string;
   children?: ComponentChildren;
   status?: 'online' | 'offline' | 'away' | 'busy';
+  style?: Record<string, string>;
 }
 
 export const Avatar = ({ 
@@ -22,7 +23,8 @@ export const Avatar = ({
   initials,
   className = '',
   children,
-  status
+  status,
+  style
 }: AvatarProps) => {
   const baseClass = 'avatar';
   const sizeClass = size !== 'md' ? `avatar-${size}` : '';
@@ -46,7 +48,7 @@ export const Avatar = ({
   };
 
   return (
-    <div className={classes}>
+    <div className={classes} style={style}>
       {renderContent()}
       {status && <span className={`avatar-status avatar-status-${status}`} />}
     </div>

@@ -6,7 +6,7 @@ export type BadgeSize = 'sm' | 'md' | 'lg';
 export interface BadgeProps {
   variant?: BadgeVariant;
   size?: BadgeSize;
-  children: ComponentChildren;
+  children?: ComponentChildren;
   dot?: boolean;
   className?: string;
 }

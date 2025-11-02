@@ -5,7 +5,7 @@ import Progress from '.';
 
 describe('Progress', () => {
   it('renders linear progress by default', () => {
-    const { container } = render(<Progress value={50} />);
+    render(<Progress value={50} />);
     const progress = screen.getByRole('progressbar');
     expect(progress).toBeInTheDocument();
     expect(progress).toHaveClass('progress', 'progress-linear');

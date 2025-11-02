@@ -9,6 +9,7 @@ export interface CardProps {
   onClick?: () => void;
   className?: string;
   children: ComponentChildren;
+  style?: Record<string, string>;
 }
 
 export const Card = ({ 
@@ -17,7 +18,8 @@ export const Card = ({
   clickable = false,
   onClick,
   className = '',
-  children
+  children,
+  style
 }: CardProps) => {
   const baseClass = 'card';
   const variantClass = variant !== 'elevated' ? `card-${variant}` : '';
@@ -40,6 +42,7 @@ export const Card = ({
       onClick={handleClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
+      style={style}
     >
       {children}
     </div>

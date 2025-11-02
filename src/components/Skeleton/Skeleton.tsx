@@ -7,6 +7,7 @@ export interface SkeletonProps {
   width?: string | number;
   height?: string | number;
   className?: string;
+  style?: Record<string, string>;
 }
 
 export const Skeleton = ({ 
@@ -14,7 +15,8 @@ export const Skeleton = ({
   animation = 'pulse',
   width,
   height,
-  className = ''
+  className = '',
+  style: customStyle
 }: SkeletonProps) => {
   const baseClass = 'skeleton';
   const variantClass = `skeleton-${variant}`;
@@ -24,7 +26,7 @@ export const Skeleton = ({
     .filter(Boolean)
     .join(' ');
 
-  const style: Record<string, string> = {};
+  const style: Record<string, string> = { ...customStyle };
   
   if (width) {
     style.width = typeof width === 'number' ? `${width}px` : width;
