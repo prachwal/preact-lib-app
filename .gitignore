@@ -28,3 +28,4 @@ junit.xml
 docs/
 coverage/
 *storybook.log
+storybook-static/

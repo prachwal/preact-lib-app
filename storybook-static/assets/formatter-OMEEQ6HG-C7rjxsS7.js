@@ -1,1 +1,0 @@
-import{_ as i,d as t,r as m}from"./WithTooltip-SK46ZJ2J-CyEPBfr0.js";import"./preload-helper-PPVm8Dsz.js";import"./iframe-Cmw7-rNe.js";import"./hooks.module-Dswl-pJE.js";var o=i(m(),1),d=(0,o.default)(2)(async(e,r)=>e===!1?r:t(r));export{d as formatter};
