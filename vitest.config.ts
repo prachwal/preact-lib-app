@@ -8,5 +8,9 @@ export default defineConfig({
     environment: 'jsdom',
     reporters: ['junit'],
     outputFile: 'junit.xml',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+      exclude: ['node_modules/', 'src/__tests__/', 'src/assets/'],
+    },
   },
 })
