@@ -1,0 +1,28 @@
+/* Light theme via media query */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --color-primary-hover: #747bff;
+    --color-text: #213547;
+    --color-bg: #ffffff;
+    --color-button-bg: #f9f9f9;
+    --color-button-border: #646cff;
+  }
+}
+
+/* Light theme via data attribute */
+:root[data-theme="light"] {
+  --color-primary-hover: #747bff;
+  --color-text: #213547;
+  --color-bg: #ffffff;
+  --color-button-bg: #f9f9f9;
+  --color-button-border: #646cff;
+}
+
+/* Dark theme via data attribute */
+:root[data-theme="dark"] {
+  --color-primary-hover: #535bf2;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-bg: #242424;
+  --color-button-bg: #1a1a1a;
+  --color-button-border: transparent;
+}

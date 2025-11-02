@@ -1,0 +1,27 @@
+// Button mixin for consistent button styling
+@mixin button-base {
+  padding: 0.6em 1.2em;
+  font: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--color-button-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-button-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+// Focus mixin for accessibility
+@mixin focus-visible {
+  &:is(:focus, :focus-visible) {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+// Hover effect mixin
+@mixin hover-effect {
+  &:hover {
+    border-color: var(--color-primary);
+  }
+}

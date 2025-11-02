@@ -1,0 +1,6 @@
+/* Buttons */
+button {
+  @include button-base;
+  @include hover-effect;
+  @include focus-visible;
+}

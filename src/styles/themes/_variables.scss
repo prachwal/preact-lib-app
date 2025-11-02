@@ -1,0 +1,24 @@
+:root {
+  // Color variables
+  --color-primary: #646cff;
+  --color-primary-hover: #535bf2;
+  --color-bg: #242424;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-button-bg: #1a1a1a;
+  --color-button-border: transparent;
+  --color-docs: #888;
+
+  // Typography
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  font-synthesis: none;
+
+  // Rendering optimization
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Color scheme
+  color-scheme: light dark;
+}
