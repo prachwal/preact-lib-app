@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/preact-vite'
-import '../src/index.css';
-import type { JSX } from 'preact';
+import '../src/index.scss'
+import type { JSX } from 'preact'
 
 const preview: Preview = {
   parameters: {
@@ -32,18 +32,18 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const theme = context.globals.theme || 'auto';
+      const theme = context.globals.theme || 'auto'
       
       if (theme === 'auto') {
         // Usuń atrybut, pozwól działać @media query
-        document.documentElement.removeAttribute('data-theme');
+        document.documentElement.removeAttribute('data-theme')
       } else {
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('data-theme', theme)
       }
 
-      return (<div id="app"><Story /></div>);
+      return <div id="app"><Story /></div>
     },
   ],
-};
+}
 
-export default preview;
+export default preview

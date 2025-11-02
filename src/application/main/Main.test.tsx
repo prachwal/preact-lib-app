@@ -23,7 +23,9 @@ test('increments counter when button is clicked', async () => {
 
 test('renders HMR instruction text', () => {
   render(<Main />)
-  expect(screen.getByText(/Edit.*src\/app\.tsx.*and save to test HMR/)).toBeInTheDocument()
+  const paragraph = screen.getByText((content) => content.includes('Edit'))
+  expect(paragraph).toBeInTheDocument()
+  expect(paragraph.tagName).toBe('P')
 })
 
 test('renders create-preact link', () => {

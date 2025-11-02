@@ -12,7 +12,8 @@ test('renders Vite logo with correct attributes', () => {
   render(<Header />)
   const viteLogo = screen.getByAltText('Vite logo')
   expect(viteLogo).toBeInTheDocument()
-  expect(viteLogo).toHaveAttribute('src', '/vite.svg')
+  expect(viteLogo).toHaveAttribute('src')
+  expect(viteLogo.getAttribute('src')).toMatch(/^data:image\/svg\+xml/)
 })
 
 test('renders Preact logo with correct attributes', () => {

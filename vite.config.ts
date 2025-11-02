@@ -13,7 +13,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    reporters: ['junit'],
+    reporters: process.env.CI ? ['junit'] : ['verbose', 'junit'],
     outputFile: 'junit.xml',
     coverage: {
       reporter: ['text', 'json', 'html'],
