@@ -9,6 +9,7 @@
     "build-css": "sass src/index.scss dist/index.css --style=compressed",
     "preview": "vite preview",
     "test": "vitest --run --coverage",
+    "merge-scss": "node scripts/merge-scss.js",
     "docs": "typedoc",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
