@@ -95,7 +95,7 @@
     @include focus-visible;
     
     &:hover {
-      background-color: var(--color-error-light);
+      background-color: rgba(239, 68, 68, 0.1);
     }
   }
   
@@ -131,7 +131,7 @@
       width: 64px;
       height: 64px;
       margin: 0 auto var(--space-4);
-      color: var(--color-text-disabled);
+      color: var(--color-text-tertiary);
     }
   }
 }

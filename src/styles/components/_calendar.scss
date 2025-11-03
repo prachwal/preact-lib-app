@@ -34,7 +34,7 @@
     @include focus-visible;
     
     &:hover {
-      background-color: var(--color-bg-hover);
+      background-color: var(--color-bg-tertiary);
     }
   }
   
@@ -63,7 +63,7 @@
     @include focus-visible;
     
     &:hover {
-      background-color: var(--color-bg-hover);
+      background-color: var(--color-bg-tertiary);
     }
     
     &-today {
@@ -80,7 +80,7 @@
     }
     
     &-disabled {
-      color: var(--color-text-disabled);
+      color: var(--color-text-tertiary);
       cursor: not-allowed;
       
       &:hover {
