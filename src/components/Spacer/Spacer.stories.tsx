@@ -19,9 +19,9 @@ export const Default: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#e3f2fd', padding: '10px' }}>Content Above</div>
+      <div style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Above</div>
       <Spacer {...args} />
-      <div style={{ background: '#f3e5f5', padding: '10px' }}>Content Below</div>
+      <div style={{ background: 'var(--color-bg-tertiary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Below</div>
     </div>
   ),
 };
@@ -32,9 +32,9 @@ export const ExtraSmall: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#e3f2fd', padding: '10px' }}>Content Above</div>
+      <div style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Above</div>
       <Spacer {...args} />
-      <div style={{ background: '#f3e5f5', padding: '10px' }}>Content Below (XS spacing)</div>
+      <div style={{ background: 'var(--color-bg-tertiary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Below (XS spacing)</div>
     </div>
   ),
 };
@@ -45,9 +45,9 @@ export const Small: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#e8f5e9', padding: '10px' }}>Content Above</div>
+      <div style={{ background: 'var(--color-bg)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Above</div>
       <Spacer {...args} />
-      <div style={{ background: '#fff3e0', padding: '10px' }}>Content Below (SM spacing)</div>
+      <div style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Below (SM spacing)</div>
     </div>
   ),
 };
@@ -58,9 +58,9 @@ export const Large: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#fce4ec', padding: '10px' }}>Content Above</div>
+      <div style={{ background: 'var(--color-bg-tertiary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Above</div>
       <Spacer {...args} />
-      <div style={{ background: '#e0f7fa', padding: '10px' }}>Content Below (LG spacing)</div>
+      <div style={{ background: 'var(--color-bg)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Below (LG spacing)</div>
     </div>
   ),
 };
@@ -71,9 +71,9 @@ export const ExtraLarge: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#ffebee', padding: '10px' }}>Content Above</div>
+      <div style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Above</div>
       <Spacer {...args} />
-      <div style={{ background: '#e8eaf6', padding: '10px' }}>Content Below (XL spacing)</div>
+      <div style={{ background: 'var(--color-bg-tertiary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Below (XL spacing)</div>
     </div>
   ),
 };
@@ -84,9 +84,9 @@ export const DoubleExtraLarge: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#f1f8e9', padding: '10px' }}>Content Above</div>
+      <div style={{ background: 'var(--color-bg)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Above</div>
       <Spacer {...args} />
-      <div style={{ background: '#fff8e1', padding: '10px' }}>Content Below (2XL spacing)</div>
+      <div style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Below (2XL spacing)</div>
     </div>
   ),
 };
@@ -98,9 +98,9 @@ export const WithDivider: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#e3f2fd', padding: '10px' }}>Section 1</div>
+      <div style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Section 1</div>
       <Spacer {...args} />
-      <div style={{ background: '#f3e5f5', padding: '10px' }}>Section 2</div>
+      <div style={{ background: 'var(--color-bg-tertiary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Section 2</div>
     </div>
   ),
 };
@@ -112,9 +112,9 @@ export const ResponsiveSpacing: Story = {
   },
   render: (args) => (
     <div>
-      <div style={{ background: '#e8f5e9', padding: '10px' }}>Content Above</div>
+      <div style={{ background: 'var(--color-bg)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>Content Above</div>
       <Spacer {...args} />
-      <div style={{ background: '#fff3e0', padding: '10px' }}>
+      <div style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text)', padding: '10px', borderRadius: '4px' }}>
         Content Below (MD on mobile, LG on medium+ screens)
       </div>
     </div>
