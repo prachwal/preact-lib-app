@@ -2,7 +2,7 @@
 
 ## Komponenty formularzy (z #file:c1.md i #file:c2.md)
 
-### Input
+### Input ✅
 
 - **Plik CSS/SCSS**: `components/_input.scss`
 - **Opis**: Style bazowe dla pól tekstowych, warianty, rozmiary, stany, label, ikony, helper text, character counter, clear button, password toggle, accessibility.
@@ -22,7 +22,7 @@
 - **Plik CSS/SCSS**: `components/_radio.scss`
 - **Opis**: Custom radio button styling, checked/unchecked states, rozmiary, label positioning, disabled state, radio group layout, animation, accessibility.
 
-### Select
+### Select ❌
 
 - **Plik CSS/SCSS**: `components/_select.scss`
 - **Opis**: Custom select styling, arrow icon, multiple select, search/filter, selected items, dropdown positioning, option hover, disabled/error states, group headers.

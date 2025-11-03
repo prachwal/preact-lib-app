@@ -6,60 +6,89 @@
 .stepper {
   display: flex;
   align-items: center;
-  
+
   &-horizontal {
     flex-direction: row;
   }
-  
+
   &-vertical {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
+  &-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-4);
+
+    .stepper-vertical & {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
   &-step {
     display: flex;
     align-items: center;
-    flex: 1;
-    
+    position: relative;
+
     &-completed {
-      .stepper-step-circle {
+      .stepper-marker {
         background-color: var(--color-success, #22c55e);
         border-color: var(--color-success, #22c55e);
         color: var(--color-white);
       }
-      
-      .stepper-step-label {
+
+      .stepper-label {
         color: var(--color-text);
       }
     }
-    
+
     &-active {
-      .stepper-step-circle {
+      .stepper-marker {
         background-color: var(--color-primary);
         border-color: var(--color-primary);
         color: var(--color-white);
       }
-      
-      .stepper-step-label {
+
+      .stepper-label {
         color: var(--color-text);
         font-weight: var(--font-weight-semibold);
       }
     }
-    
-    &-disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
+
+    &-error {
+      .stepper-marker {
+        background-color: var(--color-error, #ef4444);
+        border-color: var(--color-error, #ef4444);
+        color: var(--color-white);
+      }
+    }
+
+    &-upcoming {
+      .stepper-marker {
+        background-color: var(--color-bg);
+        border-color: var(--color-border);
+        color: var(--color-text-secondary);
+      }
+
+      .stepper-label {
+        color: var(--color-text-secondary);
+      }
+    }
+
+    &-clickable {
+      cursor: pointer;
+
+      &:hover .stepper-marker {
+        transform: scale(1.1);
+      }
     }
   }
-  
-  &-step-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  &-step-circle {
+
+  &-marker {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,37 +99,85 @@
     background-color: var(--color-bg);
     color: var(--color-text-secondary);
     font-weight: var(--font-weight-semibold);
-    transition: var(--transition-colors);
+    transition: var(--transition-all);
+    flex-shrink: 0;
   }
-  
-  &-step-label {
-    margin-top: var(--space-2);
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+
+  &-icon {
+    font-size: var(--font-size-lg);
   }
-  
-  &-step-description {
-    margin-top: var(--space-1);
-    font-size: var(--font-size-xs);
-    color: var(--color-text-tertiary);
+
+  &-number {
+    font-size: var(--font-size-base);
   }
-  
-  &-connector {
-    flex: 1;
-    height: 2px;
-    background-color: var(--color-border);
-    margin: 0 var(--space-2);
-    
-    &-completed {
-      background-color: var(--color-success, #22c55e);
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--space-3);
+
+    .stepper-vertical & {
+      margin-left: 0;
+      margin-top: var(--space-2);
+      align-items: flex-start;
     }
   }
-  
-  .stepper-vertical & {
-    &-connector {
+
+  &-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  &-description {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-1);
+  }
+
+  &-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    @include focus-visible;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &-connector {
+    position: absolute;
+    background-color: var(--color-border);
+    transition: var(--transition-colors);
+
+    .stepper-horizontal & {
+      top: 1.25rem; // center vertically on marker
+      left: 100%;
+      right: calc(-1 * var(--space-4));
+      height: 2px;
+    }
+
+    .stepper-vertical & {
+      left: 1.25rem; // center horizontally on marker
+      top: 100%;
+      bottom: calc(-1 * var(--space-4));
       width: 2px;
-      height: 2rem;
-      margin: var(--space-2) 0;
+    }
+
+    .stepper-step-completed + & {
+      background-color: var(--color-success, #22c55e);
+    }
+
+    .stepper-step-active + & {
+      background-color: var(--color-primary);
     }
   }
 }
