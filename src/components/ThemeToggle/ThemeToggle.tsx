@@ -7,8 +7,8 @@ export function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="theme-toggle"
-      aria-label={`Current theme: ${mode}. Click to toggle.`}
-      title={`Switch theme (current: ${mode})`}
+      aria-label={`Toggle theme (current: ${mode})`}
+      title="Switch theme"
     >
       {mode === 'light' && <SunIcon />}
       {mode === 'dark' && <MoonIcon />}

@@ -1,8 +1,19 @@
-// App Layout Styles
-.app-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+// Skip Link
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  z-index: 1000;
+  font-weight: 500;
+
+  &:focus {
+    top: 6px;
+  }
 }
 
 .app-container {
@@ -160,6 +171,8 @@
 
 .sidebar-nav {
   padding: 1rem 0;
+  list-style: none;
+  margin: 0;
 }
 
 .sidebar-item-wrapper {

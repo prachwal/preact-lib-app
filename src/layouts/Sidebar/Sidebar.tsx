@@ -51,14 +51,16 @@ export function Sidebar() {
 
       {/* Sidebar */}
       <aside className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
-        <nav className="sidebar-nav">
-          {navigationConfig.map((item) => (
-            <div key={item.id} className="sidebar-item-wrapper">
+        <nav className="sidebar-nav" role="navigation" aria-label="Main navigation">
+          <ul>
+            {navigationConfig.map((item) => (
+              <li key={item.id} className="sidebar-item-wrapper">
               <a
                 href={item.path}
                 className={`sidebar-item ${activeItem === item.id ? 'active' : ''} ${
                   item.children ? 'has-children' : ''
                 }`}
+                aria-current={activeItem === item.id ? 'page' : undefined}
                 onClick={(e) => {
                   if (item.children) {
                     e.preventDefault();
@@ -70,7 +72,7 @@ export function Sidebar() {
                 title={item.label}
               >
                 {item.icon && (
-                  <span className="sidebar-item-icon" data-icon={item.icon}>
+                  <span className="sidebar-item-icon" data-icon={item.icon} aria-hidden="true">
                     {getIconSVG(item.icon)}
                   </span>
                 )}
@@ -103,8 +105,9 @@ export function Sidebar() {
                   ))}
                 </div>
               )}
-            </div>
+            </li>
           ))}
+          </ul>
         </nav>
       </aside>
     </>

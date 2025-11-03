@@ -5,5 +5,5 @@ interface AppMainProps {
 }
 
 export function AppMain({ children }: AppMainProps) {
-  return <main className="app-main">{children}</main>;
+  return <main className="app-main" role="main" id="main-content">{children}</main>;
 }

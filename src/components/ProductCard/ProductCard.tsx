@@ -60,7 +60,7 @@ export const ProductCard = ({
   return (
     <div className={classes} {...props}>
       <div className="product-card-image-wrapper">
-        <img src={image} alt={title} className="product-card-image" />
+        <img src={image} alt={title} className="product-card-image" loading="lazy" />
         
         {badge && <span className="product-card-badge">{badge}</span>}
         

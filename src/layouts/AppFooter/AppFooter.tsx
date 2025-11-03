@@ -3,7 +3,7 @@ export function AppFooter() {
   const version = import.meta.env.VITE_APP_VERSION || '0.0.0';
 
   return (
-    <footer className="app-footer">
+    <footer role="contentinfo" className="app-footer">
       <div className="app-footer-content">
         <p>
           © {currentYear} Preact Component Library. All rights reserved.

@@ -11,6 +11,7 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="app-layout">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <AppHeader />
       <div className="app-container">
         <Sidebar />

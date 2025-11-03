@@ -7,7 +7,7 @@ export function AppHeader() {
   const { t } = useTranslation();
 
   return (
-    <header className="app-header">
+    <header className="app-header" role="banner">
       <div className="app-header-content">
         {/* Hamburger menu button - visible only on mobile */}
         <button
@@ -34,7 +34,7 @@ export function AppHeader() {
         </button>
 
         {/* App title */}
-        <h1 className="app-title">{t('app.title')}</h1>
+        <p className="app-title">{t('app.title')}</p>
 
         {/* Right side - theme toggle */}
         <div className="app-header-actions">

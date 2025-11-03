@@ -16,4 +16,18 @@
 
   // Color scheme support
   color-scheme: light dark;
+
+  // Additional component variables
+  --color-text-primary: var(--color-text);
+  --color-surface: var(--color-bg);
+  --color-surface-hover: var(--color-bg-tertiary);
+  --color-surface-secondary: var(--color-bg-secondary);
+  --color-primary-alpha: rgba(100, 108, 255, 0.1);
+  --color-primary-contrast: #ffffff;
+
+  // Z-index system
+  --z-index-header: 30;
+  --z-index-backdrop: 40;
+  --z-index-drawer: 50;
+  --z-index-dropdown: 1000;
 }
