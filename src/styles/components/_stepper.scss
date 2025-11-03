@@ -1,0 +1,106 @@
+// Component: Stepper
+// Step-by-step progress indicator
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.stepper {
+  display: flex;
+  align-items: center;
+  
+  &-horizontal {
+    flex-direction: row;
+  }
+  
+  &-vertical {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  &-step {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    
+    &-completed {
+      .stepper-step-circle {
+        background-color: var(--color-success, #22c55e);
+        border-color: var(--color-success, #22c55e);
+        color: var(--color-white);
+      }
+      
+      .stepper-step-label {
+        color: var(--color-text);
+      }
+    }
+    
+    &-active {
+      .stepper-step-circle {
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+        color: var(--color-white);
+      }
+      
+      .stepper-step-label {
+        color: var(--color-text);
+        font-weight: var(--font-weight-semibold);
+      }
+    }
+    
+    &-disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  
+  &-step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  &-step-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    background-color: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    transition: var(--transition-colors);
+  }
+  
+  &-step-label {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+  
+  &-step-description {
+    margin-top: var(--space-1);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+  }
+  
+  &-connector {
+    flex: 1;
+    height: 2px;
+    background-color: var(--color-border);
+    margin: 0 var(--space-2);
+    
+    &-completed {
+      background-color: var(--color-success, #22c55e);
+    }
+  }
+  
+  .stepper-vertical & {
+    &-connector {
+      width: 2px;
+      height: 2rem;
+      margin: var(--space-2) 0;
+    }
+  }
+}

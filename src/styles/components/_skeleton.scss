@@ -1,0 +1,52 @@
+// Component: Skeleton
+// Loading placeholder skeleton
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.skeleton {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-tertiary) 50%,
+    var(--color-bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--border-radius-md);
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  
+  &-text {
+    height: 1rem;
+    width: 100%;
+  }
+  
+  &-title {
+    height: 1.5rem;
+    width: 60%;
+  }
+  
+  &-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+  
+  &-button {
+    height: 2.5rem;
+    width: 100px;
+  }
+  
+  &-card {
+    height: 200px;
+    width: 100%;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

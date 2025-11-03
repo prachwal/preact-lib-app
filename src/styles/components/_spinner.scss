@@ -1,0 +1,61 @@
+// Component: Spinner
+// Loading spinner indicator
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--color-bg-tertiary);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spinner-rotate 0.8s linear infinite;
+  
+  &-sm {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-width: 2px;
+  }
+  
+  &-lg {
+    width: 3rem;
+    height: 3rem;
+    border-width: 4px;
+  }
+  
+  &-xl {
+    width: 4rem;
+    height: 4rem;
+    border-width: 5px;
+  }
+  
+  &-primary {
+    border-top-color: var(--color-primary);
+  }
+  
+  &-secondary {
+    border-top-color: var(--color-secondary);
+  }
+  
+  &-success {
+    border-top-color: var(--color-success, #22c55e);
+  }
+  
+  &-error {
+    border-top-color: var(--color-error, #ef4444);
+  }
+  
+  &-warning {
+    border-top-color: var(--color-warning, #fbbf24);
+  }
+}
+
+@keyframes spinner-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

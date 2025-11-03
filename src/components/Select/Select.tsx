@@ -2,7 +2,7 @@ import type { SelectHTMLAttributes } from 'preact';
 
 export type SelectSize = 'sm' | 'md' | 'lg';
 
-export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
   size?: SelectSize;
   label?: string;
   helperText?: string;

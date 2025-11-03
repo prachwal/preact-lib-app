@@ -1,0 +1,60 @@
+// Component: Tabs
+// Tabbed content navigation
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  
+  &-list {
+    display: flex;
+    gap: var(--space-1);
+    border-bottom: 2px solid var(--color-border);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  &-tab {
+    padding: var(--space-3) var(--space-4);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--color-text-secondary);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: var(--transition-colors);
+    margin-bottom: -2px;
+    @include focus-visible;
+    
+    &:hover:not(:disabled) {
+      color: var(--color-text);
+      background-color: var(--color-bg-tertiary);
+    }
+    
+    &-active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  
+  &-panel {
+    padding: var(--space-4);
+    
+    &-hidden {
+      display: none;
+    }
+  }
+  
+  &-content {
+    margin-top: var(--space-4);
+  }
+}

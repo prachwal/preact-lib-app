@@ -1,0 +1,50 @@
+// Component: FormGroup
+// Form field grouping with label and error handling
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  
+  &-label {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+  }
+  
+  &-required {
+    color: var(--color-error, #ef4444);
+    margin-left: var(--space-1);
+  }
+  
+  &-input {
+    width: 100%;
+  }
+  
+  &-helper {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+  }
+  
+  &-error {
+    font-size: var(--font-size-xs);
+    color: var(--color-error, #ef4444);
+  }
+  
+  &-horizontal {
+    flex-direction: row;
+    align-items: center;
+    
+    .form-group-label {
+      flex: 0 0 auto;
+      width: 150px;
+    }
+    
+    .form-group-input {
+      flex: 1;
+    }
+  }
+}

@@ -50,9 +50,11 @@
     flex-direction: column;
     gap: var(--space-2);
     
-    a {
+    a,
+    &-a {
       color: var(--color-text-secondary);
       transition: var(--transition-colors);
+      text-decoration: none;
       
       &:hover {
         color: var(--color-primary);

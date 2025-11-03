@@ -1,0 +1,70 @@
+// Component: Textarea
+// Multiline text input
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  resize: vertical;
+  transition: var(--transition-colors);
+  @include focus-visible;
+  
+  &:hover:not(:disabled) {
+    border-color: var(--color-primary);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: var(--color-bg-secondary);
+    resize: none;
+  }
+  
+  &::placeholder {
+    color: var(--color-text-tertiary);
+  }
+  
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    width: 100%;
+  }
+  
+  &-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+  }
+  
+  &-error {
+    border-color: var(--color-error, #ef4444);
+    
+    &:focus {
+      outline-color: var(--color-error, #ef4444);
+    }
+  }
+  
+  &-message {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    
+    .textarea-error & {
+      color: var(--color-error, #ef4444);
+    }
+  }
+  
+  &-counter {
+    align-self: flex-end;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+  }
+}
