@@ -15,8 +15,11 @@
 // 4. Animations
 @use './styles/animations';
 
+// 5. Layouts
+@use './styles/layouts/layout';
+
 // 6. Utilities (Optional - load last to ensure highest specificity)
 @use './styles/utilities';
 
-// 5. Components
+// 7. Components
 @use './styles/components/index.scss';

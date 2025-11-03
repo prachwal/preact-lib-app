@@ -1,0 +1,370 @@
+// App Layout Styles
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+// App Header
+.app-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+}
+
+.app-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 1rem;
+  max-width: 100%;
+}
+
+.app-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// Hamburger Button
+.hamburger-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--color-surface-hover);
+  }
+
+  // Hide on desktop
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+// Theme Toggle
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--color-surface-hover);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Sidebar
+.sidebar-backdrop {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+  
+  // Only show on mobile
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 95;
+
+  // Mobile: sliding sidebar
+  @media (max-width: 767px) {
+    &.sidebar-open {
+      transform: translateX(0);
+    }
+  }
+
+  // Tablet: collapsed to icons, always visible
+  @media (min-width: 768px) and (max-width: 1023px) {
+    transform: translateX(0);
+    width: 72px;
+
+    .sidebar-item-label {
+      display: none;
+    }
+
+    .sidebar-item-arrow {
+      display: none;
+    }
+
+    .sidebar-submenu {
+      position: absolute;
+      left: 72px;
+      top: 0;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-lg);
+      min-width: 200px;
+    }
+  }
+
+  // Desktop: full sidebar, always visible
+  @media (min-width: 1024px) {
+    transform: translateX(0);
+    position: relative;
+    top: 0;
+  }
+}
+
+.sidebar-nav {
+  padding: 1rem 0;
+}
+
+.sidebar-item-wrapper {
+  position: relative;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+
+  &:hover {
+    background: var(--color-surface-hover);
+  }
+
+  &.active {
+    background: var(--color-primary-alpha);
+    color: var(--color-primary);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+}
+
+.sidebar-item-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-item-label {
+  flex: 1;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.sidebar-item-arrow {
+  transition: transform 0.2s;
+  font-size: 0.75rem;
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.sidebar-submenu {
+  background: var(--color-surface-secondary);
+  padding: 0.5rem 0;
+}
+
+.sidebar-subitem {
+  display: block;
+  padding: 0.5rem 1rem 0.5rem 3rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-text-primary);
+  }
+
+  &.active {
+    color: var(--color-primary);
+    background: var(--color-primary-alpha);
+  }
+}
+
+// App Main
+.app-main {
+  flex: 1;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+
+  // Add left margin for tablet/desktop when sidebar is visible
+  @media (min-width: 768px) {
+    margin-left: 72px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-left: 280px;
+  }
+}
+
+// App Footer
+.app-footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 1rem;
+  margin-top: auto;
+}
+
+.app-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+}
+
+.app-footer-version {
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+// Page Styles
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text-primary);
+  }
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.page-content {
+  // Add specific page content styles as needed
+}
+
+// Error Pages
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.error-content {
+  text-align: center;
+  padding: 2rem;
+
+  .error-code {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .app-title {
+    font-size: 1rem;
+  }
+
+  .app-main {
+    padding: 1rem 0.75rem;
+    margin-left: 0;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+}
