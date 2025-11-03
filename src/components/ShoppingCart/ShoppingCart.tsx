@@ -9,7 +9,7 @@ export interface ShoppingCartProps extends HTMLAttributes<HTMLDivElement> {
  * ShoppingCart component - E-commerce category
  */
 export const ShoppingCart = ({ className = '', children, ...props }: ShoppingCartProps) => {
-  const baseClass = 'shopping-cart';
+  const baseClass = 'cart';
   
   const classes = [baseClass, className].filter(Boolean).join(' ');
 

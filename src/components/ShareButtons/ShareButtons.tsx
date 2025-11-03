@@ -9,7 +9,7 @@ export interface ShareButtonsProps extends HTMLAttributes<HTMLDivElement> {
  * ShareButtons component - Social category
  */
 export const ShareButtons = ({ className = '', children, ...props }: ShareButtonsProps) => {
-  const baseClass = 'share-buttons';
+  const baseClass = 'share';
   
   const classes = [baseClass, className].filter(Boolean).join(' ');
 

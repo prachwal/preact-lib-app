@@ -9,7 +9,7 @@ export interface PricingCardProps extends HTMLAttributes<HTMLDivElement> {
  * PricingCard component - Special category
  */
 export const PricingCard = ({ className = '', children, ...props }: PricingCardProps) => {
-  const baseClass = 'pricing-card';
+  const baseClass = 'pricing';
   
   const classes = [baseClass, className].filter(Boolean).join(' ');
 

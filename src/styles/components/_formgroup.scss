@@ -29,9 +29,23 @@
     color: var(--color-text-secondary);
   }
   
-  &-error {
+  &-optional {
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-normal);
+    margin-left: var(--space-1);
+  }
+  
+  &-message {
     font-size: var(--font-size-xs);
-    color: var(--color-error, #ef4444);
+    color: var(--color-text-secondary);
+    
+    &-error {
+      color: var(--color-error, #ef4444);
+    }
+    
+    &-success {
+      color: var(--color-success, #10b981);
+    }
   }
   
   &-horizontal {
