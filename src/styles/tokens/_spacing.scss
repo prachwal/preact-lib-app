@@ -14,11 +14,13 @@
   --space-5: calc(var(--space-unit) * 5); // 20px
   --space-6: calc(var(--space-unit) * 6); // 24px
   --space-8: calc(var(--space-unit) * 8); // 32px
+  --space-9: calc(var(--space-unit) * 9); // 36px
   --space-10: calc(var(--space-unit) * 10); // 40px
   --space-12: calc(var(--space-unit) * 12); // 48px
   --space-16: calc(var(--space-unit) * 16); // 64px
   --space-20: calc(var(--space-unit) * 20); // 80px
   --space-24: calc(var(--space-unit) * 24); // 96px
+  --space-30: calc(var(--space-unit) * 30); // 120px
   
   // Layout spacing
   --space-xs: var(--space-2);

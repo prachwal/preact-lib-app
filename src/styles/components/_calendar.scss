@@ -64,7 +64,7 @@
     background: none;
     padding: var(--space-2);
     font-size: var(--font-size-sm);
-    min-height: 36px;
+    min-height: var(--space-9);
     @include focus-visible;
     
     &:hover {
