@@ -1,0 +1,82 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Rating Component
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  
+  &-star {
+    color: var(--color-gray-300);
+    transition: var(--transition-colors);
+    
+    &-filled {
+      color: var(--color-warning);
+    }
+    
+    &-half {
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        color: var(--color-warning);
+      }
+    }
+  }
+  
+  // Interactive rating
+  &-interactive {
+    .rating-star {
+      cursor: pointer;
+      
+      &:hover {
+        color: var(--color-warning);
+      }
+    }
+  }
+  
+  // Readonly
+  &-readonly {
+    .rating-star {
+      cursor: default;
+    }
+  }
+  
+  // Sizes
+  &-sm {
+    .rating-star {
+      font-size: var(--font-size-base);
+    }
+  }
+  
+  &-md {
+    .rating-star {
+      font-size: var(--font-size-xl);
+    }
+  }
+  
+  &-lg {
+    .rating-star {
+      font-size: var(--font-size-2xl);
+    }
+  }
+  
+  // Count display
+  &-with-count {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  
+  &-count {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+}

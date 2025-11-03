@@ -1,0 +1,35 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Backdrop / Overlay Component
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-backdrop, 40);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: var(--transition-opacity);
+  
+  &-blur {
+    backdrop-filter: blur(4px);
+  }
+  
+  &-light {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  &-dark {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  &-opacity-low {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  &-opacity-high {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  @include reduced-motion {
+    transition: none;
+  }
+}

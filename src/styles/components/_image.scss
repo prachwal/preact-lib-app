@@ -1,0 +1,99 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Image Component
+.image {
+  position: relative;
+  display: inline-block;
+  
+  &-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  &-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  &-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  // Aspect ratios
+  &-aspect-16-9 {
+    aspect-ratio: 16 / 9;
+  }
+  
+  &-aspect-4-3 {
+    aspect-ratio: 4 / 3;
+  }
+  
+  &-aspect-1-1 {
+    aspect-ratio: 1 / 1;
+  }
+  
+  &-aspect-3-2 {
+    aspect-ratio: 3 / 2;
+  }
+  
+  // Object fit
+  &-cover {
+    object-fit: cover;
+  }
+  
+  &-contain {
+    object-fit: contain;
+  }
+  
+  // Rounded
+  &-rounded {
+    border-radius: var(--border-radius-md);
+  }
+  
+  &-rounded-lg {
+    border-radius: var(--border-radius-lg);
+  }
+  
+  &-rounded-full {
+    border-radius: 9999px;
+  }
+  
+  // Border
+  &-bordered {
+    border: 1px solid var(--color-border);
+  }
+  
+  // Placeholder
+  &-placeholder {
+    background-color: var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // Zoom on hover
+  &-zoom {
+    transition: transform var(--transition-duration-base);
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  // Caption
+  &-caption {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+  
+  @include reduced-motion {
+    .image-zoom {
+      transform: none;
+    }
+  }
+}

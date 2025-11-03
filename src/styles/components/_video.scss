@@ -1,0 +1,79 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Video Player Component
+.video {
+  position: relative;
+  width: 100%;
+  
+  &-player {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  &-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-4);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  
+  &-play-button,
+  &-pause-button,
+  &-fullscreen-button,
+  &-volume-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: var(--space-2);
+    @include focus-visible;
+  }
+  
+  &-timeline {
+    flex: 1;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  &-progress {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius-full);
+  }
+  
+  &-volume-slider {
+    width: 80px;
+  }
+  
+  &-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  // Aspect ratio container
+  &-aspect-16-9 {
+    aspect-ratio: 16 / 9;
+  }
+  
+  &-aspect-4-3 {
+    aspect-ratio: 4 / 3;
+  }
+}

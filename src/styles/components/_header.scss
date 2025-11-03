@@ -1,0 +1,73 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Header (Page Header) Component
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  
+  // Fixed/sticky positioning
+  &-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-index-header, 30);
+  }
+  
+  &-sticky {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-header, 30);
+  }
+  
+  // Height variants
+  &-sm {
+    height: 48px;
+  }
+  
+  &-md {
+    height: 64px;
+  }
+  
+  &-lg {
+    height: 80px;
+  }
+  
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+  }
+  
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  
+  // Scroll behavior
+  &-scroll-hide {
+    transition: transform var(--transition-duration-base);
+    
+    &.header-hidden {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @include reduced-motion {
+    .header-scroll-hide {
+      transition: none;
+    }
+  }
+}

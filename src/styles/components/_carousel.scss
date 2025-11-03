@@ -1,0 +1,74 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Carousel / Slider Component
+.carousel {
+  position: relative;
+  overflow: hidden;
+  
+  &-container {
+    display: flex;
+    transition: transform var(--transition-duration-base) ease-in-out;
+  }
+  
+  &-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+  
+  &-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: var(--border-radius-full);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    @include focus-visible;
+    z-index: 10;
+    
+    &:hover {
+      background-color: white;
+    }
+    
+    &-prev {
+      left: var(--space-4);
+    }
+    
+    &-next {
+      right: var(--space-4);
+    }
+  }
+  
+  &-dots {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-2);
+  }
+  
+  &-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--border-radius-full);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-all);
+    
+    &-active {
+      background-color: white;
+      width: 24px;
+    }
+  }
+  
+  @include reduced-motion {
+    .carousel-container {
+      transition: none;
+    }
+  }
+}

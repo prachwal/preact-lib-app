@@ -1,0 +1,70 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Stats / Metrics Component
+.stats {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  &-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-6);
+  }
+  
+  &-value {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+  
+  &-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  &-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+  }
+  
+  &-trend {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-2);
+    
+    &-positive {
+      color: var(--color-success);
+    }
+    
+    &-negative {
+      color: var(--color-error);
+    }
+  }
+  
+  &-change {
+    font-weight: var(--font-weight-semibold);
+  }
+}
