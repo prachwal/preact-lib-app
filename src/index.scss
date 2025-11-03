@@ -16,14 +16,7 @@
 @use 'styles/animations' as *;
 
 // 5. Components
-@use 'styles/components/buttons';
-@use 'styles/components/app';
-@use 'styles/components/logo';
-@use 'styles/components/card';
-@use 'styles/components/read-the-docs';
-
-// Faza 3 Components
-@use 'styles/components/faza3-index' as *;
+@use 'styles/components' as *;
 
 // 6. Utilities (Optional - load last to ensure highest specificity)
 @use 'styles/utilities' as *;
