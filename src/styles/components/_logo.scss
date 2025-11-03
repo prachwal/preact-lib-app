@@ -1,14 +1,17 @@
-/* Logo */
+// Component: Logo
+// Logo styles with hover effects
+
 .logo {
   height: 6em;
-  padding: 1.5em;
-  transition: filter 0.25s;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.preact:hover {
-  filter: drop-shadow(0 0 2em #673ab8aa);
+  padding: var(--space-6);
+  transition: filter var(--transition-duration-base);
+  will-change: filter;
+  
+  &:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  
+  &.preact:hover {
+    filter: drop-shadow(0 0 2em #673ab8aa);
+  }
 }

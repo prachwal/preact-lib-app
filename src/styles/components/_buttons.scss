@@ -1,4 +1,107 @@
-/* Buttons */
+// Component: Buttons
+// Modern button styles using design system
+@use '../base/mixins' as *;
+
+// Base button class
+.btn {
+  @include button-base;
+  @include hover-effect;
+  @include focus-visible;
+}
+
+// Size variants
+.btn-xs {
+  padding: 0.4em 0.8em;
+  font-size: 0.75rem;
+}
+
+.btn-sm {
+  padding: 0.5em 1em;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 0.75em 1.5em;
+  font-size: 1.125rem;
+}
+
+.btn-xl {
+  padding: 1em 2em;
+  font-size: 1.25rem;
+}
+
+// Primary button variant
+.btn-primary {
+  @include button-base;
+  @include hover-effect;
+  @include focus-visible;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+  }
+
+  &:is(:focus, :focus-visible) {
+    outline-color: var(--color-primary);
+  }
+}
+
+// Secondary button variant
+.btn-secondary {
+  @include button-base;
+  @include hover-effect;
+  @include focus-visible;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-secondary-hover);
+    border-color: var(--color-secondary-hover);
+  }
+
+  &:is(:focus, :focus-visible) {
+    outline-color: var(--color-secondary);
+  }
+}
+
+// Ghost button variant (transparent background)
+.btn-ghost {
+  @include button-base;
+  @include hover-effect;
+  @include focus-visible;
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-bg-tertiary);
+    border-color: var(--color-primary);
+  }
+}
+
+// Link button variant
+.btn-link {
+  @include button-base;
+  background-color: transparent;
+  color: var(--color-link);
+  border: none;
+  padding: 0.6em 0.8em;
+
+  &:hover:not(:disabled) {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+
+  &:is(:focus, :focus-visible) {
+    outline-color: var(--color-primary);
+  }
+}
+
+// Legacy support for plain button element
 button {
   @include button-base;
   @include hover-effect;

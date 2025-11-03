@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/preact-vite'
 import '../src/index.scss'
+import './preview.scss'
 import type { JSX } from 'preact'
 
 const preview: Preview = {

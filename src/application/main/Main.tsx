@@ -1,3 +1,4 @@
+import Button from '@/components/Button'
 import { useState } from 'preact/hooks'
 
 export function Main() {
@@ -6,9 +7,9 @@ export function Main() {
   return (
     <main>
       <section class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <Button variant='secondary' onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
+        </Button>
         <p>
           Edit <code>src/app.tsx</code> and save to test HMR
         </p>

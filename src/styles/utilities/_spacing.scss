@@ -1,0 +1,67 @@
+// Utilities: Spacing
+// Spacing utility classes
+
+// Margin utilities
+@each $name, $value in (
+  '0': var(--space-0),
+  '1': var(--space-1),
+  '2': var(--space-2),
+  '3': var(--space-3),
+  '4': var(--space-4),
+  '5': var(--space-5),
+  '6': var(--space-6),
+  '8': var(--space-8),
+  '12': var(--space-12),
+  '16': var(--space-16)
+) {
+  .m-#{$name} { margin: $value; }
+  .mt-#{$name} { margin-top: $value; }
+  .mr-#{$name} { margin-right: $value; }
+  .mb-#{$name} { margin-bottom: $value; }
+  .ml-#{$name} { margin-left: $value; }
+  .mx-#{$name} { margin-inline: $value; }
+  .my-#{$name} { margin-block: $value; }
+}
+
+// Auto margin
+.mx-auto { margin-inline: auto; }
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+// Padding utilities
+@each $name, $value in (
+  '0': var(--space-0),
+  '1': var(--space-1),
+  '2': var(--space-2),
+  '3': var(--space-3),
+  '4': var(--space-4),
+  '5': var(--space-5),
+  '6': var(--space-6),
+  '8': var(--space-8),
+  '12': var(--space-12),
+  '16': var(--space-16)
+) {
+  .p-#{$name} { padding: $value; }
+  .pt-#{$name} { padding-top: $value; }
+  .pr-#{$name} { padding-right: $value; }
+  .pb-#{$name} { padding-bottom: $value; }
+  .pl-#{$name} { padding-left: $value; }
+  .px-#{$name} { padding-inline: $value; }
+  .py-#{$name} { padding-block: $value; }
+}
+
+// Gap utilities
+@each $name, $value in (
+  '0': var(--space-0),
+  '1': var(--space-1),
+  '2': var(--space-2),
+  '3': var(--space-3),
+  '4': var(--space-4),
+  '5': var(--space-5),
+  '6': var(--space-6),
+  '8': var(--space-8),
+  '12': var(--space-12),
+  '16': var(--space-16)
+) {
+  .gap-#{$name} { gap: $value; }
+}
