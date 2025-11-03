@@ -22,7 +22,7 @@
 - **Plik CSS/SCSS**: `components/_radio.scss`
 - **Opis**: Custom radio button styling, checked/unchecked states, rozmiary, label positioning, disabled state, radio group layout, animation, accessibility.
 
-### Select ❌
+### Select ✅
 
 - **Plik CSS/SCSS**: `components/_select.scss`
 - **Opis**: Custom select styling, arrow icon, multiple select, search/filter, selected items, dropdown positioning, option hover, disabled/error states, group headers.

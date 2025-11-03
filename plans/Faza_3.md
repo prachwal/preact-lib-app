@@ -7,19 +7,19 @@
 - **Plik CSS/SCSS**: `components/_backdrop.scss`
 - **Opis**: Full screen overlay, opacity variants, blur, colors, z-index, click-to-close, fade animation.
 
-### Drawer / Off-canvas ❌
+### Drawer / Off-canvas ✅
 
 - **Plik CSS/SCSS**: `components/_drawer.scss`
 - **Opis**: Slide from sides, sizes, header/body/footer, close button, backdrop, slide animation, overlay.
 
 ## Komponenty media (z #file:c1.md i #file:c2.md)
 
-### Image ❌
+### Image ✅
 
 - **Plik CSS/SCSS**: `components/_image.scss`
 - **Opis**: Responsive image, aspect ratio, object-fit, rounded, border, lazy loading, placeholder, zoom, caption, lightbox.
 
-### Video Player ❌
+### Video Player ✅
 
 - **Plik CSS/SCSS**: `components/_video.scss`
 - **Opis**: Custom controls, play/pause, timeline, volume, fullscreen, settings, loading, poster, aspect ratio.
