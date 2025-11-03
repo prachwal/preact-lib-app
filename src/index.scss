@@ -22,5 +22,8 @@
 @use 'styles/components/card';
 @use 'styles/components/read-the-docs';
 
+// Faza 3 Components
+@use 'styles/components/faza3-index' as *;
+
 // 6. Utilities (Optional - load last to ensure highest specificity)
 @use 'styles/utilities' as *;

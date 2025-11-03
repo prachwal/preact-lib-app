@@ -1,0 +1,38 @@
+// Faza 3 Components Index
+// This file exports all component styles for Phase 3
+
+// Overlay components
+@forward 'backdrop';
+@forward 'drawer';
+
+// Media components
+@forward 'image';
+@forward 'video';
+@forward 'icon';
+
+// Layout components
+@forward 'container';
+@forward 'grid-system';
+@forward 'section';
+@forward 'header';
+@forward 'footer';
+@forward 'spacer';
+
+// Special components
+@forward 'carousel';
+@forward 'timeline';
+@forward 'pricing';
+@forward 'testimonial';
+@forward 'stats';
+@forward 'code';
+@forward 'search';
+@forward 'calendar';
+
+// E-commerce components
+@forward 'product-card';
+@forward 'cart';
+
+// Social components
+@forward 'comment';
+@forward 'rating';
+@forward 'share';

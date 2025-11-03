@@ -1,0 +1,51 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Section Component
+.section {
+  padding-block: var(--space-12);
+  
+  @include md {
+    padding-block: var(--space-16);
+  }
+  
+  // Spacing variants
+  &-sm {
+    padding-block: var(--space-8);
+  }
+  
+  &-lg {
+    padding-block: var(--space-24);
+  }
+  
+  // Background variants
+  &-bg-primary {
+    background-color: var(--color-bg-secondary);
+  }
+  
+  &-bg-gray {
+    background-color: var(--color-gray-50);
+  }
+  
+  // Full-width
+  &-full-width {
+    width: 100%;
+  }
+  
+  // Contained
+  &-contained {
+    max-width: var(--container-7xl);
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: var(--space-4);
+    
+    @include md {
+      padding-inline: var(--space-6);
+    }
+  }
+  
+  // Divider
+  &-divider {
+    border-bottom: 1px solid var(--color-border);
+  }
+}

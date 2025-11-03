@@ -1,0 +1,99 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Calendar / Date Picker Component
+.calendar {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-4);
+  max-width: 320px;
+  
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+  }
+  
+  &-title {
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  &-nav {
+    display: flex;
+    gap: var(--space-2);
+  }
+  
+  &-nav-button {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    @include focus-visible;
+    
+    &:hover {
+      background-color: var(--color-bg-tertiary);
+    }
+  }
+  
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--space-1);
+  }
+  
+  &-day-header {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    padding: var(--space-2);
+  }
+  
+  &-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-colors);
+    @include focus-visible;
+    
+    &:hover {
+      background-color: var(--color-bg-tertiary);
+    }
+    
+    &-today {
+      border: 2px solid var(--color-primary);
+    }
+    
+    &-selected {
+      background-color: var(--color-primary);
+      color: white;
+      
+      &:hover {
+        background-color: var(--color-primary-hover);
+      }
+    }
+    
+    &-disabled {
+      color: var(--color-text-tertiary);
+      cursor: not-allowed;
+      
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    
+    &-range {
+      background-color: var(--color-primary-light);
+    }
+    
+    &-outside-month {
+      color: var(--color-text-secondary);
+    }
+  }
+}

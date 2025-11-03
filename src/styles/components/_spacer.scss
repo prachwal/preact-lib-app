@@ -1,0 +1,47 @@
+@use '../tokens' as *;
+@use '../mixins' as *;
+
+// Spacer Component
+.spacer {
+  // Vertical spacing
+  &-xs {
+    height: var(--space-2);
+  }
+  
+  &-sm {
+    height: var(--space-4);
+  }
+  
+  &-md {
+    height: var(--space-8);
+  }
+  
+  &-lg {
+    height: var(--space-12);
+  }
+  
+  &-xl {
+    height: var(--space-16);
+  }
+  
+  &-2xl {
+    height: var(--space-24);
+  }
+  
+  // Responsive spacing
+  @include md {
+    &-md-lg {
+      height: var(--space-12);
+    }
+    
+    &-md-xl {
+      height: var(--space-16);
+    }
+  }
+  
+  // Divider
+  &-divider {
+    height: 1px;
+    background-color: var(--color-border);
+  }
+}
