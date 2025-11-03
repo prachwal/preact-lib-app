@@ -1,0 +1,25 @@
+// Component: CodeBlock
+// Syntax highlighted code display
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.code-block {
+  position: relative;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-4);
+  overflow-x: auto;
+  
+  pre {
+    margin: 0;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  code {
+    font-family: inherit;
+    color: var(--color-text);
+  }
+}

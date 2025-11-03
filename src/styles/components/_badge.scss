@@ -1,0 +1,58 @@
+// Component: Badge
+// Small status indicators and labels
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem 0.5rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text);
+  
+  &-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+  &-success {
+    background-color: var(--color-success, #22c55e);
+    color: var(--color-white);
+  }
+  
+  &-warning {
+    background-color: var(--color-warning, #fbbf24);
+    color: var(--color-warning-dark, #92400e);
+  }
+  
+  &-error {
+    background-color: var(--color-error, #ef4444);
+    color: var(--color-white);
+  }
+  
+  &-info {
+    background-color: var(--color-info, #3b82f6);
+    color: var(--color-white);
+  }
+  
+  &-sm {
+    padding: 0.0625rem 0.375rem;
+    font-size: 0.625rem;
+  }
+  
+  &-lg {
+    padding: 0.25rem 0.75rem;
+    font-size: var(--font-size-sm);
+  }
+  
+  &-dot {
+    padding: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}

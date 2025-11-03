@@ -63,6 +63,11 @@
     &.header-hidden {
       transform: translateY(-100%);
     }
+    
+    // Alternative class name for compatibility
+    &-header-hidden {
+      transform: translateY(-100%);
+    }
   }
   
   @include reduced-motion {

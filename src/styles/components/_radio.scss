@@ -1,0 +1,54 @@
+// Component: Radio
+// Radio button input with custom styling
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  user-select: none;
+  
+  input[type="radio"] {
+    position: relative;
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    background-color: var(--color-bg);
+    cursor: pointer;
+    transition: var(--transition-colors);
+    @include focus-visible;
+    
+    &:hover:not(:disabled) {
+      border-color: var(--color-primary);
+    }
+    
+    &:checked {
+      border-color: var(--color-primary);
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+      }
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  
+  &-label {
+    color: var(--color-text);
+  }
+}

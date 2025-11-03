@@ -1,0 +1,73 @@
+// Component: Select
+// Custom select dropdown
+@use '../tokens' as *;
+@use '../base/mixins' as *;
+
+.select {
+  position: relative;
+  width: 100%;
+  
+  select {
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    padding-right: 2.5rem;
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: var(--transition-colors);
+    appearance: none;
+    @include focus-visible;
+    
+    &:hover:not(:disabled) {
+      border-color: var(--color-primary);
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background-color: var(--color-bg-secondary);
+    }
+  }
+  
+  &-icon {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--color-text-secondary);
+  }
+  
+  &-label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+  }
+  
+  &-error {
+    select {
+      border-color: var(--color-error, #ef4444);
+      
+      &:focus {
+        outline-color: var(--color-error, #ef4444);
+      }
+    }
+  }
+  
+  &-message {
+    margin-top: var(--space-1);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    
+    .select-error & {
+      color: var(--color-error, #ef4444);
+    }
+  }
+}
