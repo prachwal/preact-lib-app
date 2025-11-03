@@ -87,6 +87,27 @@
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
+  // Image support
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  // Aspect ratio
+  &-aspect {
+    position: relative;
+    
+    .icon-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
   @include reduced-motion {
     .icon-spin,
     .icon-pulse {

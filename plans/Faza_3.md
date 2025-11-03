@@ -2,7 +2,7 @@
 
 ## Komponenty overlay (z #file:c1.md i #file:c2.md)
 
-### Backdrop / Overlay
+### Backdrop / Overlay ✅
 
 - **Plik CSS/SCSS**: `components/_backdrop.scss`
 - **Opis**: Full screen overlay, opacity variants, blur, colors, z-index, click-to-close, fade animation.
@@ -27,7 +27,7 @@
 ### Icon ✅
 
 - **Plik CSS/SCSS**: `components/_icon.scss`
-- **Opis**: Icon container, rozmiary, colors, alignment, icon button, spinning/pulse animations.
+- **Opis**: Icon container with image support, lazy loading, aspect ratios, fallback handling, rozmiary, colors, alignment, icon button, spinning/pulse animations.
 
 ## Komponenty layout (z #file:c1.md i #file:c2.md)
 
