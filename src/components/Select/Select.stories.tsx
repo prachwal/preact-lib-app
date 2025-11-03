@@ -16,6 +16,12 @@ const meta: Meta<SelectProps> = {
     disabled: {
       control: 'boolean',
     },
+    searchable: {
+      control: 'boolean',
+    },
+    multiple: {
+      control: 'boolean',
+    },
   },
 };
 
@@ -29,6 +35,29 @@ const countryOptions = [
   { value: 'ca', label: 'Canada' },
   { value: 'au', label: 'Australia' },
   { value: 'de', label: 'Germany' },
+];
+
+const groupedFoodOptions = [
+  {
+    label: 'Fruits',
+    options: [
+      { value: 'apple', label: 'Apple' },
+      { value: 'banana', label: 'Banana' },
+      { value: 'orange', label: 'Orange' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'grape', label: 'Grape' },
+    ],
+  },
+  {
+    label: 'Vegetables',
+    options: [
+      { value: 'carrot', label: 'Carrot' },
+      { value: 'broccoli', label: 'Broccoli' },
+      { value: 'spinach', label: 'Spinach' },
+      { value: 'tomato', label: 'Tomato' },
+      { value: 'cucumber', label: 'Cucumber' },
+    ],
+  },
 ];
 
 export const Default: Story = {
@@ -90,6 +119,51 @@ export const Sizes: Story = {
   ),
 };
 
+export const Searchable: Story = {
+  args: {
+    label: 'Country (Searchable)',
+    options: countryOptions,
+    searchable: true,
+    placeholder: 'Search and select...',
+  },
+};
+
+export const MultipleSelect: Story = {
+  args: {
+    label: 'Countries (Multiple)',
+    options: countryOptions,
+    multiple: true,
+    searchable: true,
+    placeholder: 'Select countries...',
+  },
+};
+
+export const WithGroups: Story = {
+  args: {
+    label: 'Food',
+    options: groupedFoodOptions,
+  },
+};
+
+export const SearchableWithGroups: Story = {
+  args: {
+    label: 'Food (Searchable with Groups)',
+    options: groupedFoodOptions,
+    searchable: true,
+    placeholder: 'Search food...',
+  },
+};
+
+export const MultipleWithGroups: Story = {
+  args: {
+    label: 'Food (Multiple with Groups)',
+    options: groupedFoodOptions,
+    multiple: true,
+    searchable: true,
+    placeholder: 'Select multiple foods...',
+  },
+};
+
 export const WithCustomOptions: Story = {
   render: () => (
     <Select label="Priority">
@@ -117,5 +191,43 @@ export const WithOptGroups: Story = {
         <option value="spinach">Spinach</option>
       </optgroup>
     </Select>
+  ),
+};
+
+export const AllFeatures: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '400px' }}>
+      <Select
+        label="Standard Select"
+        options={countryOptions}
+        helperText="Native select element"
+      />
+      <Select
+        label="Searchable Select"
+        options={countryOptions}
+        searchable
+        placeholder="Search countries..."
+      />
+      <Select
+        label="Multiple Select"
+        options={countryOptions}
+        multiple
+        searchable
+        placeholder="Select multiple countries..."
+      />
+      <Select
+        label="Grouped Options"
+        options={groupedFoodOptions}
+        searchable
+        placeholder="Search food..."
+      />
+      <Select
+        label="Multiple with Groups"
+        options={groupedFoodOptions}
+        multiple
+        searchable
+        placeholder="Select multiple foods..."
+      />
+    </div>
   ),
 };

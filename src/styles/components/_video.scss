@@ -6,6 +6,12 @@
   position: relative;
   width: 100%;
   
+  &-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-gray-900, #000);
+  }
+  
   &-player {
     width: 100%;
     height: auto;
@@ -22,17 +28,36 @@
     display: flex;
     align-items: center;
     gap: var(--space-4);
+    opacity: 0;
+    transition: opacity var(--transition-duration-base);
+    
+    .video-wrapper:hover & {
+      opacity: 1;
+    }
   }
   
+  &-control-btn,
   &-play-button,
   &-pause-button,
   &-fullscreen-button,
-  &-volume-button {
-    background: none;
+  &-volume-button,
+  &-play-pause,
+  &-mute,
+  &-fullscreen {
+    background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
     cursor: pointer;
-    padding: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-lg);
+    transition: var(--transition-colors);
+    backdrop-filter: blur(4px);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    
     @include focus-visible;
   }
   
@@ -49,6 +74,7 @@
     height: 100%;
     background-color: var(--color-primary);
     border-radius: var(--border-radius-full);
+    transition: width 0.1s linear;
   }
   
   &-volume-slider {
@@ -60,6 +86,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+    font-size: var(--font-size-xl);
   }
   
   &-poster {
@@ -71,9 +99,47 @@
   // Aspect ratio container
   &-aspect-16-9 {
     aspect-ratio: 16 / 9;
+    
+    .video-player {
+      height: 100%;
+      object-fit: cover;
+    }
   }
   
   &-aspect-4-3 {
     aspect-ratio: 4 / 3;
+    
+    .video-player {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-aspect-1-1 {
+    aspect-ratio: 1 / 1;
+    
+    .video-player {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  &-aspect-21-9 {
+    aspect-ratio: 21 / 9;
+    
+    .video-player {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  @include reduced-motion {
+    .video-controls {
+      transition: none;
+    }
+    
+    .video-progress {
+      transition: none;
+    }
   }
 }
