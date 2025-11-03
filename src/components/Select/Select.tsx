@@ -171,40 +171,42 @@ export const Select = ({
             {required && <span className="select-required">*</span>}
           </label>
         )}
-        <div className="select-wrapper">
-          <select 
-            className={selectClasses} 
-            disabled={disabled} 
-            required={required} 
-            value={value}
-            onChange={onChange}
-            {...props}
-          >
-            {children ||
-              options.map((option) => {
-                if (isOptionGroup(option)) {
+        <div className="select-content">
+          <div className="select-wrapper">
+            <select 
+              className={selectClasses} 
+              disabled={disabled} 
+              required={required} 
+              value={value}
+              onChange={onChange}
+              {...props}
+            >
+              {children ||
+                options.map((option) => {
+                  if (isOptionGroup(option)) {
+                    return (
+                      <optgroup key={option.label} label={option.label}>
+                        {option.options.map((opt) => (
+                          <option key={opt.value} value={opt.value} disabled={opt.disabled}>
+                            {opt.label}
+                          </option>
+                        ))}
+                      </optgroup>
+                    );
+                  }
                   return (
-                    <optgroup key={option.label} label={option.label}>
-                      {option.options.map((opt) => (
-                        <option key={opt.value} value={opt.value} disabled={opt.disabled}>
-                          {opt.label}
-                        </option>
-                      ))}
-                    </optgroup>
+                    <option key={option.value} value={option.value} disabled={option.disabled}>
+                      {option.label}
+                    </option>
                   );
-                }
-                return (
-                  <option key={option.value} value={option.value} disabled={option.disabled}>
-                    {option.label}
-                  </option>
-                );
-              })}
-          </select>
-          <span className="select-arrow" aria-hidden="true">
-            ▼
-          </span>
+                })}
+            </select>
+            <span className="select-arrow" aria-hidden="true">
+              ▼
+            </span>
+          </div>
+          {currentMessage && <span className="select-message">{currentMessage}</span>}
         </div>
-        {currentMessage && <span className="select-message">{currentMessage}</span>}
       </div>
     );
   }
@@ -220,98 +222,100 @@ export const Select = ({
           {required && <span className="select-required">*</span>}
         </label>
       )}
-      <div className="select-wrapper">
-        <div
-          className={`${selectClasses} select-custom-trigger`}
-          onClick={() => !disabled && setIsOpen(!isOpen)}
-          role="button"
-          tabIndex={disabled ? -1 : 0}
-          aria-expanded={isOpen}
-          aria-haspopup="listbox"
-        >
-          <span className="select-value">{getSelectedLabel()}</span>
-          <span className="select-arrow" aria-hidden="true">
-            {isOpen ? '▲' : '▼'}
-          </span>
-        </div>
-        
-        {isOpen && (
-          <div 
-            className={`select-dropdown select-dropdown-${dropdownPosition}`}
-            ref={dropdownRef}
-            role="listbox"
-            aria-multiselectable={multiple}
+      <div className="select-content">
+        <div className="select-wrapper">
+          <div
+            className={`${selectClasses} select-custom-trigger`}
+            onClick={() => !disabled && setIsOpen(!isOpen)}
+            role="button"
+            tabIndex={disabled ? -1 : 0}
+            aria-expanded={isOpen}
+            aria-haspopup="listbox"
           >
-            {searchable && (
-              <div className="select-search">
-                <input
-                  type="text"
-                  className="select-search-input"
-                  placeholder="Search..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm((e.target as HTMLInputElement).value)}
-                  onClick={(e) => e.stopPropagation()}
-                />
-              </div>
-            )}
-            
-            <div className="select-options">
-              {filteredOptions.length === 0 ? (
-                <div className="select-no-results">No results found</div>
-              ) : (
-                filteredOptions.map((option) => {
-                  if (isOptionGroup(option)) {
+            <span className="select-value">{getSelectedLabel()}</span>
+            <span className="select-arrow" aria-hidden="true">
+              {isOpen ? '▲' : '▼'}
+            </span>
+          </div>
+          
+          {isOpen && (
+            <div 
+              className={`select-dropdown select-dropdown-${dropdownPosition}`}
+              ref={dropdownRef}
+              role="listbox"
+              aria-multiselectable={multiple}
+            >
+              {searchable && (
+                <div className="select-search">
+                  <input
+                    type="text"
+                    className="select-search-input"
+                    placeholder="Search..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm((e.target as HTMLInputElement).value)}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                </div>
+              )}
+              
+              <div className="select-options">
+                {filteredOptions.length === 0 ? (
+                  <div className="select-no-results">No results found</div>
+                ) : (
+                  filteredOptions.map((option) => {
+                    if (isOptionGroup(option)) {
+                      return (
+                        <div key={option.label} className="select-group">
+                          <div className="select-group-label">{option.label}</div>
+                          {option.options.map((opt) => (
+                            <div
+                              key={opt.value}
+                              className={`select-option ${
+                                selectedValues.includes(opt.value) ? 'select-option-selected' : ''
+                              } ${opt.disabled ? 'select-option-disabled' : ''}`}
+                              onClick={() => !opt.disabled && handleOptionClick(opt.value)}
+                              role="option"
+                              aria-selected={selectedValues.includes(opt.value)}
+                              aria-disabled={opt.disabled}
+                            >
+                              {multiple && (
+                                <span className="select-checkbox">
+                                  {selectedValues.includes(opt.value) ? '✓' : ''}
+                                </span>
+                              )}
+                              {opt.label}
+                            </div>
+                          ))}
+                        </div>
+                      );
+                    }
                     return (
-                      <div key={option.label} className="select-group">
-                        <div className="select-group-label">{option.label}</div>
-                        {option.options.map((opt) => (
-                          <div
-                            key={opt.value}
-                            className={`select-option ${
-                              selectedValues.includes(opt.value) ? 'select-option-selected' : ''
-                            } ${opt.disabled ? 'select-option-disabled' : ''}`}
-                            onClick={() => !opt.disabled && handleOptionClick(opt.value)}
-                            role="option"
-                            aria-selected={selectedValues.includes(opt.value)}
-                            aria-disabled={opt.disabled}
-                          >
-                            {multiple && (
-                              <span className="select-checkbox">
-                                {selectedValues.includes(opt.value) ? '✓' : ''}
-                              </span>
-                            )}
-                            {opt.label}
-                          </div>
-                        ))}
+                      <div
+                        key={option.value}
+                        className={`select-option ${
+                          selectedValues.includes(option.value) ? 'select-option-selected' : ''
+                        } ${option.disabled ? 'select-option-disabled' : ''}`}
+                        onClick={() => !option.disabled && handleOptionClick(option.value)}
+                        role="option"
+                        aria-selected={selectedValues.includes(option.value)}
+                        aria-disabled={option.disabled}
+                      >
+                        {multiple && (
+                          <span className="select-checkbox">
+                            {selectedValues.includes(option.value) ? '✓' : ''}
+                          </span>
+                        )}
+                        {option.label}
                       </div>
                     );
-                  }
-                  return (
-                    <div
-                      key={option.value}
-                      className={`select-option ${
-                        selectedValues.includes(option.value) ? 'select-option-selected' : ''
-                      } ${option.disabled ? 'select-option-disabled' : ''}`}
-                      onClick={() => !option.disabled && handleOptionClick(option.value)}
-                      role="option"
-                      aria-selected={selectedValues.includes(option.value)}
-                      aria-disabled={option.disabled}
-                    >
-                      {multiple && (
-                        <span className="select-checkbox">
-                          {selectedValues.includes(option.value) ? '✓' : ''}
-                        </span>
-                      )}
-                      {option.label}
-                    </div>
-                  );
-                })
-              )}
+                  })
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+        {currentMessage && <span className="select-message">{currentMessage}</span>}
       </div>
-      {currentMessage && <span className="select-message">{currentMessage}</span>}
     </div>
   );
 };
