@@ -31,6 +31,16 @@
 
   &-container {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  &-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   &-wrapper {
@@ -198,10 +208,13 @@
   
   &-label {
     display: block;
-    margin-bottom: var(--space-2);
+    margin-bottom: 0;
+    padding-top: var(--space-2);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     color: var(--color-text);
+    white-space: nowrap;
+    min-width: 120px;
   }
 
   &-required {
