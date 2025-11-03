@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/preact';
+import { render } from "@testing-library/preact";
 import userEvent from '@testing-library/user-event';
 import Backdrop from '.';
 
